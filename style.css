@@ -7,8 +7,10 @@ body {
 .nome {
     text-align: center;      
     font-family: Merriweather, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-bottom: 50px;
-
+    padding-top: 10px;
+    min-height: 100px;
+    border-radius:25px;
+    background-color: rgb(185, 209, 219);
 }
 .apresentacao-geral {
     background-color: #6E8894;
@@ -17,7 +19,7 @@ body {
     margin-left: 200px;
     margin-right: 200px;
     z-index: 2;
-    padding: 35px 10px;
+    padding: 10px 10px;
 }
 
 .background-foto {
