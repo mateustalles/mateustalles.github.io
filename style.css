@@ -1,0 +1,52 @@
+#nome {
+    font-family: Merriweather, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#apresentacao {
+    min-width: 70%;
+    text-align: justify;
+    display:block;
+    font-family: Manjari, Geneva, Tahoma, sans-serif;
+}
+body {
+    background-color: #FFF9F9;
+    color: #425159;
+    left: 25%;
+    position: absolute;
+}
+#foto {
+    vertical-align: top;
+   float: left;
+   margin: 10px;
+   width: 200px;
+}
+#indice {
+    margin-left: 25px;
+    font-weight:600;
+}
+#links {
+    margin-left: 25px;
+}
+#imagem-foto {
+    border-radius: 100px;    
+}
+strong {
+    font-weight:600;
+}
+em {
+    color: #6E8894;
+}
+.boa-comm {
+    font-size:1.2em;
+}
+.fluent-eng {
+    font-size: 1.3em;
+}
+.gen-exp {
+    font-size: 1.4em;
+}
+.sei-js {
+    font-size: 1.5em;
+}
+.sei-shell-git {
+    font-size: 1.7em;
+}
