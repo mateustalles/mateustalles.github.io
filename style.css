@@ -1,39 +1,45 @@
-#nome {
-    text-align: center;      
-    font-family: Merriweather, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#apresentacao {
-    min-width: 70%;
-    margin-right: 35px;
-    text-align: justify;
-    font-family: Manjari, Geneva, Tahoma, sans-serif;
-}
 body {
     background-color: #FFF9F9;
     color: #425159;
+    font-family: Verdana, Tahoma, sans-serif;
+    z-index: 1;
 }
-#foto {
-   float: left;
-   margin-right:35px;   
-   background-size: 100%;
-   overflow: visible;
+.nome {
+    text-align: center;      
+    font-family: Merriweather, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 50px;
+
+}
+.apresentacao-geral {
+    background-color: #6E8894;
+    width: 1000px;
+    border-radius: 25px;
+    margin-left: 200px;
+    margin-right: 200px;
+    z-index: 2;
+    padding: 35px 10px;
 }
 
-
-
-#conteudo-principal {
-    max-width:80%;
-    padding: 0% 15%;
-}
-
-#background-foto {
+.background-foto {
     border-radius: 25px;
     background-color: #CCC7B9;
     height: 240px;    
     padding: 0px 35px;
     margin-bottom: 35px;
     min-width: 800px;
+    z-index: 3;
 }
+
+.foto {
+   float: left;
+   margin-right:125px;   
+   overflow: visible;
+   width: 100px;
+}
+
+
+
+
 
 #indice {
     margin-left: 25px;
@@ -53,17 +59,13 @@ em {
     color: #6E8894;
 }
 .boa-comm {
-    font-size:1.2em;
+    font-weight:600;
 }
-.fluent-eng {
-    font-size: 1.3em;
-}
+
 .gen-exp {
-    font-size: 1.4em;
+    font-weight:600;
 }
-.sei-js {
-    font-size: 1.5em;
-}
+
 .sei-shell-git {
-    font-size: 1.7em;
+    font-weight:600;
 }
