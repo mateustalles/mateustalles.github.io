@@ -15,12 +15,26 @@ body {
 #foto {
    float: left;
    margin-right:35px;   
-   width: 200px;
+   background-size: 100%;
+   overflow: visible;
 }
+
+
+
 #conteudo-principal {
     max-width:80%;
     padding: 0% 15%;
 }
+
+#background-foto {
+    border-radius: 50px;
+    background-color: #CCC7B9;
+    height: 240px;    
+    padding: 0px 35px;
+    margin-bottom: 35px;
+    min-width: 800px;
+}
+
 #indice {
     margin-left: 25px;
     font-weight:600;
@@ -29,7 +43,8 @@ body {
     margin-left: 25px;
 }
 #imagem-foto {
-    border-radius: 100px;    
+    border-radius: 100px;  
+    min-height:200px;  
 }
 strong {
     font-weight:600;
