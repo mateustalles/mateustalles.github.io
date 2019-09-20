@@ -1,13 +1,17 @@
 body {
     background-color: rgba(245, 245, 245, 0.541);
-}
-
-.tudo {
     color: #425159;
     font-size: 12px;
     font-family: Verdana, Tahoma, sans-serif;
     padding: 0px 100px;
-    z-index: 1;
+}
+
+.top-menu {
+    position:fixed;
+    top: 6px;
+    background-color: white;
+    width: 100%;
+    font-size: 2em;
 }
 
 .container {
@@ -18,7 +22,7 @@ body {
 .barra-superior {
     position:fixed;
     top: 8px;
-    width: 475px;
+    max-width: 100%;
     background-color: rgb(185, 209, 219);
     border-radius: 25px;
     font-size: 24px;
