@@ -1,5 +1,8 @@
+body {
+    background-color: rgba(245, 245, 245, 0.541);
+}
+
 .tudo {
-    background-color: #FFF9F9;
     color: #425159;
     font-size: 12px;
     font-family: Verdana, Tahoma, sans-serif;
@@ -9,6 +12,7 @@
 
 .container {
     margin-top: 70px;
+ 
 }
 
 .barra-superior {
@@ -18,7 +22,17 @@
     background-color: rgb(185, 209, 219);
     border-radius: 25px;
     font-size: 24px;
-    padding: 8px 200px 8px 470px;
+    padding: 8px 200px 8px 465px;
+}
+
+.conteudo-principal {
+    background-color: rgb(178, 212, 216);
+    border-radius: 25px;
+    padding: 0px 0px;
+}
+
+.artigo {
+    margin: 0px 8px 0px 8px; 
 }
 
 a.link {
@@ -36,14 +50,25 @@ div.link {
 
 h1 {
     text-align: right;
-    margin-top: 100px;
-    margin-bottom: 75px;
+    color: white;
+    background-color: rgb(228, 69, 69);
+    padding: 6px 8px;
+    line-height: 2.6em;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+h2 {
+    background-color: rgb(228, 69, 69);
+    line-height: 2em;
+    min-width: 100%;
+    padding: 6px 8px;
+    color:white;
 }
 
 .img1 {
     max-width: 400px;
     margin-right : 8px;
-    margin-bottom: 8px;
 }
 
 .artigo {
@@ -66,16 +91,17 @@ h1 {
 
 
 a:link {
-    color: #425159;
     text-decoration: none;
+    color: rgb(228, 69, 69);
+
 }
 
  a:hover {
      text-decoration: underline;
-    color: #425159;
-}
+     color: rgb(228, 69, 69);
+    }
 
 a:visited,a:focus,a:visited {
-    color: #425159;
+    color: rgb(228, 69, 69);
     text-decoration: none;
 }
