@@ -1,8 +1,9 @@
-body {
+.tudo {
     background-color: #FFF9F9;
     color: #425159;
     font-size: 12px;
     font-family: Verdana, Tahoma, sans-serif;
+    padding: 0px 100px;
     z-index: 1;
 }
 
@@ -13,19 +14,36 @@ body {
 .barra-superior {
     position:fixed;
     top: 8px;
-    width: 100%;
+    min-width:84%;
     background-color: rgb(185, 209, 219);
     border-radius: 25px;
     padding: 8px 6px;
     text-align: center;
+
 }
 
+h1 {
+    text-align: right;
+    margin-top: 100px;
+    margin-bottom: 75px;
+}
+
+.img1 {
+    max-width: 400px;
+    margin-right : 8px;
+    margin-bottom: 8px;
+}
+
+.artigo {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 18px;
+}
 .foto-principal {
     float:left;
 }
 
 .rodape {
-    width: 100%;
     display: block;
     background-color: rgb(185, 209, 219);
     border-radius: 25px;
