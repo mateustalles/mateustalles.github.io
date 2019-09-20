@@ -28,7 +28,7 @@ body {
 .conteudo-principal {
     background-color: rgb(178, 212, 216);
     border-radius: 25px;
-    padding: 0px 0px;
+    padding: 0px 0px 8px 0px;
 }
 
 .artigo {
@@ -86,6 +86,7 @@ h2 {
     border-radius: 25px;
     padding: 8px 6px;
     text-align: center;
+    margin-top: 35px;
 }
 
 
