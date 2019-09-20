@@ -6,8 +6,13 @@ body {
     z-index: 1;
 }
 
+.container {
+    margin-top: 70px;
+}
+
 .barra-superior {
     position:fixed;
+    top: 8px;
     width: 100%;
     background-color: rgb(185, 209, 219);
     border-radius: 25px;
@@ -16,9 +21,8 @@ body {
 }
 
 .rodape {
-    position: absolute;
-    bottom: 0px;
     width: 100%;
+    display: block;
     background-color: rgb(185, 209, 219);
     border-radius: 25px;
     padding: 8px 6px;
