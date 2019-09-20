@@ -61,7 +61,7 @@ h1 {
 h2 {
     background-color: rgb(228, 69, 69);
     line-height: 2em;
-    min-width: 100%;
+    max-width: 100%;
     padding: 6px 8px;
     color:white;
 }
