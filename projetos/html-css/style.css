@@ -1,0 +1,48 @@
+body {
+    background-color: #FFF9F9;
+    color: #425159;
+    font-size: 12px;
+    font-family: Verdana, Tahoma, sans-serif;
+    z-index: 1;
+}
+
+.barra-superior {
+    position:fixed;
+    width: 100%;
+    background-color: rgb(185, 209, 219);
+    border-radius: 25px;
+    padding: 8px 6px;
+    text-align: center;
+}
+
+.rodape {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(185, 209, 219);
+    border-radius: 25px;
+    padding: 8px 6px;
+    text-align: center;
+}
+
+a.link {
+    min-height: 100%;
+    margin-left: 6px;
+    margin-right: 6px;
+    background-color: rgb(199, 230, 243);
+}
+
+a:link {
+    color: #425159;
+    text-decoration: none;
+}
+
+ a:hover {
+     text-decoration: underline;
+    color: #425159;
+}
+
+a:visited,a:focus,a:visited {
+    color: #425159;
+    text-decoration: none;
+}
