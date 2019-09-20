@@ -14,11 +14,23 @@
 .barra-superior {
     position:fixed;
     top: 8px;
-    min-width:84%;
+    width: 475px;
     background-color: rgb(185, 209, 219);
     border-radius: 25px;
-    padding: 8px 6px;
-    text-align: center;
+    font-size: 24px;
+    padding: 8px 200px 8px 470px;
+}
+
+a.link {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+div.link {
+    float:left;
+    min-height:100%;
+    border-radius:25px;
+    background-color: rgb(199, 230, 243);
 
 }
 
@@ -51,12 +63,7 @@ h1 {
     text-align: center;
 }
 
-a.link {
-    min-height: 100%;
-    margin-left: 6px;
-    margin-right: 6px;
-    background-color: rgb(199, 230, 243);
-}
+
 
 a:link {
     color: #425159;
