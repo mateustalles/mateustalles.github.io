@@ -20,6 +20,10 @@ body {
     text-align: center;
 }
 
+.foto-principal {
+    float:left;
+}
+
 .rodape {
     width: 100%;
     display: block;
