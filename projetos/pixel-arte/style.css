@@ -5,6 +5,10 @@ body {
 div {
     cursor: default;
 }
+h1 {
+    border: 2px solid black;
+    margin: 60px 0px;
+}
 .main-container {
     position: absolute;
     margin-top: 35px;
@@ -22,6 +26,10 @@ div {
 .container-paleta {
     position: absolute;
     left:10px;
+    top: 200px;
+    height: auto;
+    margin-bottom: 35px;
+    max-width: 200px;
     background-color: black;
     text-align: center;
     color: white;
@@ -79,3 +87,8 @@ td {
 .reset {
     border: 1px solid white;
 }
+
+.btn-github {
+    border: 1px solid white;
+    margin: 10px 0px;
+};

@@ -106,8 +106,8 @@ criaTabela(5)
 
     //Bonus #5: Perfil GitHub
 
-    
-    function github(){
+    let btnAlien = document.querySelector(".btn-github");
+    btnAlien.addEventListener("click", function (){
     let tableLength = Math.sqrt(tableArray.length),
     halfTable = tableLength/2;
         //Esta seção é responsável por "espelhar" o quadro.
@@ -120,4 +120,4 @@ criaTabela(5)
             console.log(antiPixel);
             antiPixel.style.backgroundColor=corAtual;
             }
-        }
+        });
