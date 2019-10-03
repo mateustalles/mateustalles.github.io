@@ -113,14 +113,12 @@ criaTabela(5)
     halfTable = tableLength/2;
         //Esta seção é responsável por "espelhar" o quadro.
         for (let x = 0; x<tableLength ; x++) {
-                    let alienY = Math.floor(Math.random()*2);
-                    let alienPixel = document.getElementById(x+","+alienY);
-                    alienPixel.style.backgroundColor=corAtual;
-                    
-                   let antiY=tableLength-1-alienY;
-                   let antiPixel = document.getElementById(x+","+antiY);
-                   console.log(antiPixel);
-                   antiPixel.style.backgroundColor=corAtual;
-                    
+            let alienY = Math.floor(Math.random()*(tableLength-halfTable));
+            let alienPixel = document.getElementById(x+","+alienY);
+            alienPixel.style.backgroundColor=corAtual;
+            let antiY=tableLength-1-alienY;
+            let antiPixel = document.getElementById(x+","+antiY);
+            console.log(antiPixel);
+            antiPixel.style.backgroundColor=corAtual;
             }
         }
