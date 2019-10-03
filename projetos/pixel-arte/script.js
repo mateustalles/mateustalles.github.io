@@ -23,6 +23,18 @@ criaTabela(7)
     corAtual="black";
     for (let cores of paletaCor) {
         console.log(cores.id);
+
+        //configurando classe active ligar e desligar apenas nos eventos corretos, ou seja, quando tem
+        //a classe active-hover e não a active definitiva, que só é setada através do clique.
+        cores.addEventListener("mouseover", function() {
+            this.className+=" active-hover";
+        });
+            cores.addEventListener("mouseleave", function() {
+                                                                //importante o espaço no final dessa class
+                if(this.className.includes("active-hover") && !(this.className.includes("active ")) ) {
+                this.className="btn-container";   
+                }         
+        }); 
         
         cores.addEventListener("click", function () {
             let selectedColor = document.querySelector("."+this.id);
