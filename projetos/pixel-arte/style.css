@@ -21,7 +21,7 @@ div {
 }
 .container-paleta {
     position: absolute;
-    left:80px;
+    left:10px;
     background-color: black;
     text-align: center;
     color: white;
@@ -74,4 +74,8 @@ td {
 
 .input-tablesize {
     width: 20px;
+}
+
+.reset {
+    border: 1px solid white;
 }
