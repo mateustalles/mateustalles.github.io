@@ -69,6 +69,12 @@ criaTabela(5)
             cells.style.backgroundColor="white";
         }
     });
+
+    function resetar() {
+        for (cells of tableArray) {
+            cells.style.backgroundColor="white";
+        }
+    };
         
     //setar tamanho customizado: Bonus #3
     let inputSize = document.querySelector(".input-tablesize");
@@ -99,24 +105,22 @@ criaTabela(5)
     });
 
     //Bonus #5: Perfil GitHub
+
+    
     function github(){
+        
     let tableLength = Math.sqrt(tableArray.length),
     halfTable = tableLength/2;
-
-    for(pixels of tableArray) {
-    var tableIds = pixels.id;
-    var ids = tableIds;
+        //Esta seção é responsável por "espelhar" o quadro.
         for (let x = 0; x<tableLength ; x++) {
-            for (let y=0; y<halfTable; y++) {   
-                if (ids.includes(x+","+y)) {
-                    var transferColor = getComputedStyle(pixels).backgroundColor;
-                    console.log(transferColor);
-                    let antiY=tableLength-1-y;
+                    let alienY = Math.floor(Math.random()*2);
+                    let alienPixel = document.getElementById(x+","+alienY);
+                    alienPixel.style.backgroundColor=corAtual;
+                    
+                   let antiY=tableLength-1-alienY;
                    let antiPixel = document.getElementById(x+","+antiY);
                    console.log(antiPixel);
-                   antiPixel.style.backgroundColor=transferColor;
+                   antiPixel.style.backgroundColor=corAtual;
+                    
             }
         }
-    }
-    }
-}
