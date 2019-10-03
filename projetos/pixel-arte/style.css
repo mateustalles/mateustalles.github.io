@@ -1,0 +1,60 @@
+body {
+    overflow: auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+div {
+    cursor: default;
+}
+.main-container {
+    position: absolute;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    left: 50%;
+    top: 50%;
+    width: 65%;
+    height: 95%;
+    padding: 30px 35px 30px 35px;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    border: 2px solid black;
+    overflow: auto;
+}
+.container-paleta {
+    position: absolute;
+    left:100px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-weight: 800;
+}
+
+.paleta-colors {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 3px 1px;
+}
+
+.color1{ background-color: black; border:1px solid white}
+.color2 {background-color: blue;}
+.color3 {background-color: #0FA36B;}
+.color4 {background-color: goldenrod;}
+
+
+.container-table {
+    position: relative;
+    display: inline-block;
+    margin-right: auto;
+    background-color: black;
+}
+
+td {
+    display: inline-block;
+    margin: 1px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid white;
+    background-color: white;
+}
