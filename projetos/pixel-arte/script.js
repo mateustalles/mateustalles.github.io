@@ -15,3 +15,24 @@ function criaTabela(n) {
         console.log(tableArray)
 }
 criaTabela(7)
+
+//atribuindo função à paleta, que armazena a cor numa variavel
+
+    let paletaCor = document.querySelectorAll(".paleta-colors"),
+    corAtual=undefined;
+    for (let cores of paletaCor) {
+        console.log(cores);
+        cores.addEventListener("click", function () {
+            console.log(getComputedStyle(this).backgroundColor)
+            corAtual = getComputedStyle(this).backgroundColor;
+        })
+    }
+
+//atribuindo função de pintar a tabela de pixel
+
+    for (pixel of tableArray) {
+        console.log(pixel)
+        pixel.addEventListener("click", function() {
+            this.style.backgroundColor=corAtual;
+        })
+    };
