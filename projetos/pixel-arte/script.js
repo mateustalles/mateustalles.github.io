@@ -1,6 +1,9 @@
 var tableArray=[];
 function criaTabela(n) {
-    let tabela = document.querySelector(".pixel-table");
+    let tabelaContainer = document.querySelector(".container-table"),
+        tabela = document.createElement("table");
+        tabela.className="pixel-table"
+        tabelaContainer.appendChild(tabela);
         for (let i = 0; i<n ; i++) {
             let linha = document.createElement("tr");
             tabela.appendChild(linha);
