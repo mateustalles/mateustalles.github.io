@@ -21,7 +21,7 @@ div {
 }
 .container-paleta {
     position: absolute;
-    left:100px;
+    left:80px;
     background-color: black;
     text-align: center;
     color: white;
@@ -37,7 +37,7 @@ div {
     margin: 3px 1px;
 }
 
-.color1{ background-color: black; border:1px solid white}
+.color1{ background-color: black; outline:1px solid white}
 .color2 {background-color: blue;}
 .color3 {background-color: #0FA36B;}
 .color4 {background-color: goldenrod;}
@@ -57,4 +57,17 @@ td {
     width: 40px;
     border: 1px solid white;
     background-color: white;
+}
+
+.btn-container {
+    display:inline-block;
+    height: 30px;
+    width: 30px;
+    padding: 10px 5px 5px 5px;
+}
+.active {
+    background-color: #D1CA98;
+}
+.active-hover {
+    background-color: #D1CA98;
 }

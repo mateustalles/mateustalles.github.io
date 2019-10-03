@@ -35,14 +35,13 @@ criaTabela(7)
                 this.className="btn-container";   
                 }         
         }); 
-        
+
         cores.addEventListener("click", function () {
             let selectedColor = document.querySelector("."+this.id);
-            console.log(selectedColor)
             corAtual = getComputedStyle(selectedColor).backgroundColor;
             //atribui class active à div pai
-            let btnContainers = document.querySelectorAll(".btn-container");
-            for (each of btnContainers) {
+            
+            for (each of paletaCor) {
                 each.className="btn-container";
             }
             this.className+=" active";
