@@ -74,3 +74,16 @@ criaTabela(5)
         document.querySelector(".pixel-table").remove();
         criaTabela(this.value);
     });
+
+    //Bonus #4: Gerando paletas aleatórias
+
+    window.addEventListener("load", function(){
+        let paletaCor = document.querySelectorAll(".btn-container");
+        for (let colors of paletaCor) {
+        let selectedColor = document.querySelector("."+colors.id);
+        corAtual = getComputedStyle(selectedColor).backgroundColor;
+            for (pixels of tableArray) {
+                pixels.style.backgroundColor=colorAtual;
+            }
+        }
+    });
