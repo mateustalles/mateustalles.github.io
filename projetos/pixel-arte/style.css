@@ -71,3 +71,7 @@ td {
 .active-hover {
     background-color: #D1CA98;
 }
+
+.input-tablesize {
+    width: 20px;
+}

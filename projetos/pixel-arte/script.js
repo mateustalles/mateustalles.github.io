@@ -14,7 +14,7 @@ function criaTabela(n) {
         document.querySelector('.container-table').style.minWidth=n*40+"px";
         console.log(tableArray)
 }
-criaTabela(7)
+criaTabela(5)
 
 //atribuindo função à paleta, que armazena a cor numa variavel
 //Bonus 1 - adicionar class "active" para cor ativa
@@ -60,7 +60,14 @@ criaTabela(7)
     //resetar quadro - Bonus #2
     let reset = document.querySelector(".reset");
     reset.addEventListener("click",function() {
-    for (cells of tableArray) {
-        cells.style.backgroundColor="white";
-    }
-});
+        for (cells of tableArray) {
+            cells.style.backgroundColor="white";
+        }
+    });
+        
+    //setar tamanho customizado: Bonus #3
+    let inputSize = document.querySelector(".input-tablesize");
+    inputSize.addEventListener("change", function() {
+        document.querySelector(".pixel-table").remove();
+        criaTabela(this.value);
+    });
