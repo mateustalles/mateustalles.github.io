@@ -1,6 +1,6 @@
+var tableArray=[];
 function criaTabela(n) {
     let tabela = document.querySelector(".pixel-table");
-        tableArray=[];
         for (let i = 0; i<n ; i++) {
             let linha = document.createElement("tr");
             tabela.appendChild(linha);
@@ -56,3 +56,11 @@ criaTabela(7)
             this.style.backgroundColor=corAtual;
         })
     };
+
+    //resetar quadro - Bonus #2
+    let reset = document.querySelector(".reset");
+    reset.addEventListener("click",function() {
+    for (cells of tableArray) {
+        cells.style.backgroundColor="white";
+    }
+});
