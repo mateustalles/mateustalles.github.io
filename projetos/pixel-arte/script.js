@@ -79,11 +79,18 @@ criaTabela(5)
 
     window.addEventListener("load", function(){
         let paletaCor = document.querySelectorAll(".btn-container");
-        for (let colors of paletaCor) {
-        let selectedColor = document.querySelector("."+colors.id);
-        corAtual = getComputedStyle(selectedColor).backgroundColor;
-            for (pixels of tableArray) {
-                pixels.style.backgroundColor=colorAtual;
+        for (pixels of tableArray) {
+            for (let colors of paletaCor) {
+                //Este comando exclui o ultimo digito do colors.id que é um número, e adicionada
+                //a string "color" um outronumero aleatoriamente gerado de 0 a 3, 
+                //e depois adiciona +1, pois os Id's estão
+                //numeros como color1, color2, color3 e color 4;                
+            let idRandom = ((colors.id).slice(0,-1)) + (Math.floor(Math.random() * 4)+1) ;
+            //captura o valor de backgroundColor das divs de cada botão
+            let selectedColor = document.querySelector("."+idRandom);
+            corAtual = getComputedStyle(selectedColor).backgroundColor;
+            //aplica a cada pixel que esteja endo itnerpolado.            
+            pixels.style.backgroundColor=corAtual;
             }
         }
     });
