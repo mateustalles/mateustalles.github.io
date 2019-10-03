@@ -108,7 +108,6 @@ criaTabela(5)
 
     
     function github(){
-    resetar();
     let tableLength = Math.sqrt(tableArray.length),
     halfTable = tableLength/2;
         //Esta seção é responsável por "espelhar" o quadro.
