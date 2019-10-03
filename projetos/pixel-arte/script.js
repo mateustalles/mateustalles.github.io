@@ -16,7 +16,9 @@ function criaTabela(n) {
         }
         document.querySelector('.container-table').style.minWidth=n*40+"px";
         console.log(tableArray)
+        var dimension = n;
 }
+
 criaTabela(5)
 
 //atribuindo função à paleta, que armazena a cor numa variavel
@@ -71,6 +73,7 @@ criaTabela(5)
     //setar tamanho customizado: Bonus #3
     let inputSize = document.querySelector(".input-tablesize");
     inputSize.addEventListener("change", function() {
+        tableArray=[];
         document.querySelector(".pixel-table").remove();
         criaTabela(this.value);
     });
@@ -94,3 +97,26 @@ criaTabela(5)
             }
         }
     });
+
+    //Bonus #5: Perfil GitHub
+    function github(){
+    let tableLength = Math.sqrt(tableArray.length),
+    halfTable = tableLength/2;
+
+    for(pixels of tableArray) {
+    var tableIds = pixels.id;
+    var ids = tableIds;
+        for (let x = 0; x<tableLength ; x++) {
+            for (let y=0; y<halfTable; y++) {   
+                if (ids.includes(x+","+y)) {
+                    var transferColor = getComputedStyle(pixels).backgroundColor;
+                    console.log(transferColor);
+                    let antiY=tableLength-1-y;
+                   let antiPixel = document.getElementById(x+","+antiY);
+                   console.log(antiPixel);
+                   antiPixel.style.backgroundColor=transferColor;
+            }
+        }
+    }
+    }
+}
