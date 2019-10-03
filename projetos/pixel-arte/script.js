@@ -17,14 +17,23 @@ function criaTabela(n) {
 criaTabela(7)
 
 //atribuindo função à paleta, que armazena a cor numa variavel
+//Bonus 1 - adicionar class "active" para cor ativa
 
-    let paletaCor = document.querySelectorAll(".paleta-colors"),
-    corAtual=undefined;
+    let paletaCor = document.querySelectorAll(".btn-container"),
+    corAtual="black";
     for (let cores of paletaCor) {
-        console.log(cores);
+        console.log(cores.id);
+        
         cores.addEventListener("click", function () {
-            console.log(getComputedStyle(this).backgroundColor)
-            corAtual = getComputedStyle(this).backgroundColor;
+            let selectedColor = document.querySelector("."+this.id);
+            console.log(selectedColor)
+            corAtual = getComputedStyle(selectedColor).backgroundColor;
+            //atribui class active à div pai
+            let btnContainers = document.querySelectorAll(".btn-container");
+            for (each of btnContainers) {
+                each.className="btn-container";
+            }
+            this.className+=" active";
         })
     }
 
