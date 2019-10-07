@@ -53,6 +53,7 @@ criaTabela(5)
         })
     }
 
+function init() {
 //atribuindo função de pintar a tabela de pixel
 
     for (pixel of tableArray) {
@@ -75,13 +76,15 @@ criaTabela(5)
             cells.style.backgroundColor="white";
         }
     };
-        
+}
+init();
     //setar tamanho customizado: Bonus #3
     let inputSize = document.querySelector(".input-tablesize");
     inputSize.addEventListener("change", function() {
         tableArray=[];
         document.querySelector(".pixel-table").remove();
         criaTabela(this.value);
+        init();
     });
 
     //Bonus #4: Gerando paletas aleatórias
