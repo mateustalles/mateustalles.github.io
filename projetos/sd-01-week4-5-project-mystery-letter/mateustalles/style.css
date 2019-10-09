@@ -1,0 +1,122 @@
+body {
+    overflow: auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+}
+div {
+    cursor: default;
+}
+
+h1 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.active,.active-hover {
+    outline: 2px solid white;
+}
+
+.container {
+    position: absolute;
+    margin-top: 5px;
+    margin-bottom: 35px;
+    left: 50%;
+    top: 50%;
+    width: 65%;
+    height: 95%;
+    padding: 5px 35px;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    background-color:white;
+    color: black;
+    border: 2px double black;
+    overflow: auto;
+}
+
+.input-letter {
+    border: 1px solid black;
+}
+
+.input-container {
+    position: absolute;
+    height: 400px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.btn-submit {
+    position: absolute;
+    right: 25%;
+}
+
+.container-result {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 95%;
+    height: 70%;
+    transform: translate(-50%, -50%);
+}
+.temp-div {
+    width: 200px;
+    height: auto;
+    font-style: none;
+    text-shadow: none;
+    font-weight: none;
+    font-family: monospace;
+    font-size: 20px;
+    background-image: none;
+    color: white;
+    background-color: black;
+    position: relative;
+    display: none;
+
+}
+
+.btn-close {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color: white;
+    color: black;
+}
+
+/*Classes de estilo aleatorio*/
+.underlined{ text-decoration: underline solid white}
+.overlined{ text-decoration: overline solid white}
+.italic{font-style: italic}
+.linethrough {text-decoration: line-through solid white}
+.smallcaps {font-variant: small-caps}
+.bold {font-weight: 700}
+.lspacing-small{letter-spacing: -3.4px}
+.lspacing-big{letter-spacing: 6px}
+.capitalize{text-transform: capitalize}
+.neon {color: #FFFFFF;
+    background: #232323;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;}
+.flaming {color: #FFFFFF;
+    background: #333333;
+    text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;}
+.comic {color: #bc2e1e;
+    background: #edde9c;
+    text-shadow: 0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 2px 1px 1px #5dabcd, 2px 3px 2px #378ab4, 3px 2px 2px #5dabcd, 3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4, 5px 4px 2px #5dabcd, 5px 6px 2px #378ab4, 6px 5px 2px #5dabcd, 6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4, 8px 7px 0px #5dabcd;}
+.vegas {color: #FFFFFF;
+    background: #333333;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;}
+.deep {color: #e0dfdc;
+    background: #556677;
+    letter-spacing: .1em;
+    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0,0,0,0.9);}
+.canvas {background-image: url(images/mystery-letter-canvas.png)}
+.printout {background-image:url(images/mystery-letter-computer-printout-paper.png)}
+.pink {background-image:url(images/mystery-letter-pink-pattern.png)}
+.rough {background-image:url(images/mystery-letter-rough-paper.png)}
+
+.dropdown-menu {width:120px;}
+.form {overflow: auto; width: 150px;}
+.color-container {
+    
+    border: 1px solid white;
+}
