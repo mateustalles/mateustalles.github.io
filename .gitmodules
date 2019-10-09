@@ -1,3 +1,6 @@
 [submodule "projetos/sd-01-week4-5-project-meme-generator"]
 	path = projetos/sd-01-week4-5-project-meme-generator
 	url = https://github.com/tryber/sd-01-week4-5-project-meme-generator.git
+[submodule "projetos/projetos/sd-01-week4-5-project-mystery-letter"]
+	path = projetos/projetos/sd-01-week4-5-project-mystery-letter
+	url = https://github.com/tryber/sd-01-week4-5-project-mystery-letter
