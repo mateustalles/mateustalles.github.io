@@ -54,10 +54,16 @@ novaPaleta();
 
 function pegaCores() {
     let paletaCor = document.querySelectorAll(".btn-container");
-    for (cor of paletaCor) {
+    for (let cor of paletaCor) {
         cor.addEventListener("click", function () {
-            let corSelecionada = this.childNodes[2]
-            corAtual = getComputedStyle(corSelecionada).backgroundColor;
+            let corSelecionada = cor.childNodes;
+            for (nodes of corSelecionada) {
+                //Isto pois a ordem dos nodes gerada no carregamento
+                //e depois da aleatorização estavam vindo diferentes.
+               if (nodes.nodeName!="#text") {   
+                    corAtual = getComputedStyle(nodes).backgroundColor;
+                }
+            }
         })
     }
 }
