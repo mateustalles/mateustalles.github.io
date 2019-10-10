@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>PROJETO PIXEL_ART - CRIADO POR MATEUS TALLES</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-    <div class="main-container">
-        <h1>Bem-vindo ao PIXELATOR!</h1>
-        
+
+    <h1>Bem-vindo ao PIXELATOR!</h1>
+
     <div class="container-paleta">
         <h4>PALETA DE CORES</h4>
-        <div class="btn-container active" id="color1"><div class="paleta-colors color1"></div></div>
-        <div class="btn-container" id="color2"><div class="paleta-colors color2" ></div></div>
-        <div class="btn-container" id="color3"><div class="paleta-colors color3" ></div></div>
-        <div class="btn-container" id="color4"><div class="paleta-colors color4"></div></div>
-        <br><br>
-        <div class="reset">RESET COLORS</div>
+        <div class="btn-container ativa" id="color1">
+            <div class="cores-paleta color1"></div>
+        </div>
+        <div class="btn-container" id="color2">
+            <div class="cores-paleta color2"></div>
+        </div>
+        <div class="btn-container" id="color3">
+            <div class="cores-paleta color3"></div>
+        </div>
+        <div class="btn-container" id="color4">
+            <div class="cores-paleta color4"></div>
+        </div>
         <br>
-        <div>TABLE SIZE (NxN): <input class="input-tablesize" type="text" maxlength="1"></input></div>
-        
+        <div class="btn-aleatorizar">ALEATORIZAR!</div>
+        </div>
+
+        <br><br>
+        <div class="menu-adicional">
+        <div class="reset">RESETAR CORES</div>
+        <br>
+        <div>TAMANHO DA TABELA NxN (DE 5 A 50): <input class="input-tamanho" type="text" maxlength="2"></input></div>
+
         <div class="btn-github">CRIAR ALIEN GITHUB</div>
         <h6>PS: Para criar um Alien mais legal, primeiro resete o Pixelator, e clique 2 ou 3 vezes para incrementar,
-        mude de cor e clique mais 1 ou 2 vezes no botão para criar um Alien supimpa!</h6>
+            mude de cor e clique mais 1 ou 2 vezes no botão para criar um Alien supimpa!</h6>
+        </div>
     </div>
 
 
-    <div class="container-table"></div>
-    </div>
+    <div class="container-tabela"></div>
+
     <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>
