@@ -33,15 +33,15 @@
     for (let border of btnBorders) {
         console.log(border.id)
         border.addEventListener ("click", function(){
-        let imgContainer = document.querySelector(".image-container");
-        imgContainer.style.border=border.id;
+            let imgContainer = document.querySelector(".image-meme");
+            imgContainer.style.borderStyle=border.id;
         });
     }
 
     let corBordas = document.querySelectorAll(".border-colors");
     for (let color of corBordas) {
         color.addEventListener("click", function () {
-            let imgContainer = document.querySelector(".image-container");
+            let imgContainer = document.querySelector(".image-meme");
             imgContainer.style.borderColor = getComputedStyle(color).backgroundColor;
         })
     }

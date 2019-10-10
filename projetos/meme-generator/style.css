@@ -52,13 +52,13 @@ div {
     padding: 0px;
     text-align: center;
     font-size:50px;
-    border: 8px solid black;
     resize: both;
     overflow: hidden;
 }
 
 .image-meme {   
     width: 100%;
+    border: 8px solid black;
 }
 
 .text {
@@ -70,7 +70,7 @@ div {
     color: white;
     -webkit-text-stroke: 2px black;
     word-break:break-all;
-  white-space:normal;
+    white-space:normal;
 }
 .text.up{
     top: 0%;
@@ -104,6 +104,9 @@ div {
 .gold {background-color: goldenrod;}
 .red {background-color: red}
 
+.border-width {
+    border-width: 8px;
+}
 
 .miniatures {
     position: absolute;
