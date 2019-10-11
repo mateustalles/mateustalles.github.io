@@ -1,0 +1,103 @@
+body {
+    overflow: auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+}
+div {
+    cursor: default;
+}
+
+.active,.active-hover {
+    outline: 2px solid white;
+}
+
+.container {
+    position: absolute;
+    margin-top: 5px;
+    margin-bottom: 35px;
+    left: 50%;
+    top: 50%;
+    width: 65%;
+    height: 100%;
+    padding: 20px 35px;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    background-color:white;
+    color: black;
+    border: 2px double black;
+    overflow: hidden;
+}
+
+.container-bolas {
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    height:auto;
+    margin: 40px 0;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    font-weight: 800;
+}
+.btn-container {
+    display: inline-block;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 3px 5px;
+}
+.bolinha{
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    border: 2px solid white;
+    border-radius:300px;
+    width: 75px;
+    height: 75px;
+}
+
+.btn-restart-container {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 50px;
+}
+.btn-restart {
+    height: 60px;
+    width: 200px;
+}
+.resultado {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    width:100%;
+    transform: translate(-50%);
+    max-height: 50px;
+    font-size: 20px;
+}
+.placar {
+    position: absolute;
+    top:35px;
+    right:35px;
+    width: 100px;
+    height: 100px;
+    background: black;
+    color: white;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+.quantity {
+    position: absolute;
+    display:block;
+    left: 15%;
+    top: 10%;
+    background-color:black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.qty {width: 40px;}
