@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>PROJETO ADIVINHADOR DE CORES - TRYBE</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
     </head>
     <body>
         <div class="container-central">
             <h1>ADIVINHE A COR!</h1>
              <div class="placar"></div>
-            <div class="new-color"></div>
-            <div class="quantity">BALLS QTY:<br>MAX :18<br><input type="text" class="qty" placeholder="06"></input></div>
+            <div class="nova-cor"></div>
+            <div class="qtd-container">QTD DE BOLAS:<br>(MÁX :18)<br><input type="text" class="quantidade"></input></div>
             <div class="container-bolas">
-                <div class="btn-container" ><div class="bolinha cor1"></div></div>
-                <div class="btn-container"><div class="bolinha cor2" ></div></div>
-                <div class="btn-container"><div class="bolinha cor3" ></div></div>
-                <div class="btn-container" ><div class="bolinha cor4"></div></div>
-                <div class="btn-container" ><div class="bolinha cor5" ></div></div>
-                <div class="btn-container"><div class="bolinha cor6"></div></div>
+                <div class="btn-container" ><div id="cor1" class="bolinha"></div></div>
+                <div class="btn-container"><div id="cor2" class="bolinha" ></div></div>
+                <div class="btn-container"><div id="cor3" class="bolinha" ></div></div>
+                <div class="btn-container" ><div id="cor4" class="bolinha"></div></div>
+                <div class="btn-container" ><div id="cor5" class="bolinha" ></div></div>
+                <div class="btn-container"><div id="cor6" class="bolinha"></div></div>
             </div>
             <div class="resultado"></div>
-            <div class="btn-restart-container"><button name="botao-resetar" class="btn-restart">RESTART</button></div>
+            <div class="btn-resetar-container"><button name="botao-resetar" class="btn-resetar">RESETAR!</button></div>
 
         </div>
-        <script type="text/javascript" src ="scripts.js"></script>
+        <script type="text/javascript" src ="script.js"></script>
     </body>
 </html>

@@ -11,7 +11,7 @@ div {
     outline: 2px solid white;
 }
 
-.container {
+.container-central {
     position: absolute;
     margin-top: 5px;
     margin-bottom: 35px;
@@ -57,14 +57,14 @@ div {
     height: 75px;
 }
 
-.btn-restart-container {
+.btn-resetar-container {
     position: absolute;
     bottom: 5%;
     left: 50%;
     transform: translate(-50%);
     margin-top: 50px;
 }
-.btn-restart {
+.btn-resetar {
     height: 60px;
     width: 200px;
 }
@@ -89,7 +89,7 @@ div {
     font-weight: bold;
 }
 
-.quantity {
+.qtd-container {
     position: absolute;
     display:block;
     left: 15%;
@@ -100,4 +100,4 @@ div {
     font-weight: bold;
 }
 
-.qty {width: 40px;}
+.quantidade {width: 40px;}
