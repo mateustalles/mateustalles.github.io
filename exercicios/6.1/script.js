@@ -1,10 +1,14 @@
 window.addEventListener("load", function() {
     adicionaEstados();
+    checarData();
 });
 
 function adicionaEstados() {
 let campoEstados = document.getElementById("campo-estados");
 let listaEstados = [{
+    name: " ",
+    value: "n/a"
+}, {
     name: "Acre",
     value: "ac"
 }, {
@@ -92,5 +96,25 @@ let listaEstados = [{
         criaEstado.value = estado.value;
         campoEstados.appendChild(criaEstado);
     }
+}
+
+function checarData() {
+    let botaoSubmit = document.getElementById("botao-submit")
+    let campoData = document.getElementById("campo-data-inicio")
+    let dataStatus = document.querySelector(".data-status")
+    campoData.addEventListener("change", function() {
+    let stringData = campoData.value.split("/");
+    if ( stringData[0] > 0 && stringData[0] <= 31 &&
+        stringData[1] > 1 && stringData[1] <= 12 &&
+                stringData[2] > 0) {
+                dataStatus.style.visibility = "hidden";
+                botaoSubmit.disabled = false;
+                return true;
+            } else {
+                dataStatus.style.visibility = "visible";
+                botaoSubmit.disabled = true;
+                return false;
+            }
+    });
 }
 
