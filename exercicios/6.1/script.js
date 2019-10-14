@@ -136,8 +136,15 @@ function statusInvalida() {
 let botaoBloquearFluxo = document.querySelector("#botao-bloqueio");
 botaoBloquearFluxo.addEventListener("click", function() {
     let formulario = document.querySelector(".formulario");
-    for (let each of formulario.childNodes)
+    for (let each of formulario.children)
     each.addEventListener("click", function(event){
         event.preventDefault()
       });
 });
+
+let botaoValidacao = document.querySelector("#botao-validacao");
+botaoValidacao.addEventListener("click", function() {
+    let formulario = document.querySelector("form");
+    formulario.reportValidity()
+});
+
