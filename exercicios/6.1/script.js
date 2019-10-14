@@ -131,3 +131,13 @@ function statusInvalida() {
     botaoSubmit.disabled = true;
     return false;
 };
+
+
+let botaoBloquearFluxo = document.querySelector("#botao-bloqueio");
+botaoBloquearFluxo.addEventListener("click", function() {
+    let formulario = document.querySelector(".formulario");
+    for (let each of formulario.childNodes)
+    each.addEventListener("click", function(event){
+        event.preventDefault()
+      });
+});

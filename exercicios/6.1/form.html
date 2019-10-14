@@ -7,63 +7,65 @@
     </head>
     <body>
         <div class="form-container">
-        <form action="" method="GET" class="formulario">
-            <fieldset>
-                <legend>Dados Cadastrais</legend>
-                <div class="campo-texto">
-                    <label for="campo-texto">Nome</label>
-                    <input type="text" id="campo-texto" name="nome" maxlength="40" required="required" />
-                </div>
-                <div class="campo-email">
-                    <label for="campo-email">E-mail</label>
-                    <input type="text" id="campo-email" name="email" maxlength="50" pattern="\w+@\w+\.\w+" required="required" />
-                </div>
-                <div class="campo-cpf">
-                    <label for="campo-cpf">CPF</label>
-                    <input type="text" id="campo-cpf" name="cpf" maxlength="11" required="required" />
-                </div>
-                <div class="campo-endereco">
-                    <label for="campo-endereco">Endereço</label>
-                    <input type="text" id="campo-endereço" name="endereco" maxlength="200" required="required" />
-                </div>
-                <div class="campo-cidade">
-                    <label for="campo-cidade">Cidade</label>
-                    <input type="text" id="campo-cidade" name="cidade" maxlength="28" required="required" />
-                </div>
-                <div class="campo-estados">
-                    <label for="campo-estados">Estado</label>
-                    <select id="campo-estados" name="estado" required="required">
-                    </select>
-                </div>
-                <div class="campo-tipohabitacao">
-                    <label for="campo-tipohabitacao-casa campo-tipohabitacao-ap">Tipo de Habitação</label>
-                    <input type="radio" id="campo-tipohabitacao-casa" name="tipohabitacao" value="casa" required="required">Casa</input>
-                    <input type="radio" id="campo-tipohabitacao-ap" name="tipohabitacao" value="ap" required="required">Apartamento</input>
-                </div>
-            </fieldset>
-            <fieldset>
-                <legend>Último emprego</legend>
-                <div class="campo-resumocurriculo">
-                    <label for="campo-resumocurriculo"Resumo do currículo></label>
-                    <textarea id="campo-resumocurriculo" name="resumocurriculo" maxlength="1000" required="required"></textarea>
-                </div>
-                <div class="campo-cargo">
-                    <label for="campo-cargo">Cargo</label>
-                    <input type="text" id="campo-cargo" name="cargo" maxlength="40" required="required" />
-                </div>
-                <div class="campo-descricao-cargo">
-                    <label for="campo-descricao-cargo">Descrição do cargo</label>
-                    <input type="text" id="campo-descricao-cargo" nome="descricao-do-cargo" maxlength="500" required="required" />
-                </div>
-                <div class="campo-data-inicio">
-                    <label for="campo-data-inicio">Data de início</label>
-                    <input type="text" id="campo-data-inicio" nome="data-de-inicio" pattern="[0-3][0-9]\/[0-1][0-9]\/[\d]{4}" required="required" />
-                    <span class="data-status">Data inválida!</span>
-                </div>
-                <div class="botao-submit">
-                    <input type="submit" id="botao-submit" />
-                </div>
-                    </label>
+            <form action="" method="GET" class="formulario">
+                <fieldset>
+                    <legend>Dados Cadastrais</legend>
+                    <div class="campo-texto">
+                        <label for="campo-texto">Nome</label>
+                        <input type="text" id="campo-texto" name="nome" maxlength="40" required="required" />
+                    </div>
+                    <div class="campo-email">
+                        <label for="campo-email">E-mail</label>
+                        <input type="text" id="campo-email" name="email" maxlength="50" pattern="\w+@\w+\.\w+" required="required" />
+                    </div>
+                    <div class="campo-cpf">
+                        <label for="campo-cpf">CPF</label>
+                        <input type="text" id="campo-cpf" name="cpf" maxlength="11" required="required" />
+                    </div>
+                    <div class="campo-endereco">
+                        <label for="campo-endereco">Endereço</label>
+                        <input type="text" id="campo-endereço" name="endereco" maxlength="200" required="required" />
+                    </div>
+                    <div class="campo-cidade">
+                        <label for="campo-cidade">Cidade</label>
+                        <input type="text" id="campo-cidade" name="cidade" maxlength="28" required="required" />
+                    </div>
+                    <div class="campo-estados">
+                        <label for="campo-estados">Estado</label>
+                        <select id="campo-estados" name="estado" required="required">
+                        </select>
+                    </div>
+                    <div class="campo-tipohabitacao">
+                        <label for="campo-tipohabitacao-casa campo-tipohabitacao-ap">Tipo de Habitação</label>
+                        <input type="radio" id="campo-tipohabitacao-casa" name="tipohabitacao" value="casa" required="required">Casa</input>
+                        <input type="radio" id="campo-tipohabitacao-ap" name="tipohabitacao" value="ap" required="required">Apartamento</input>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Último emprego</legend>
+                    <div class="campo-resumocurriculo">
+                        <label for="campo-resumocurriculo"Resumo do currículo></label>
+                        <textarea id="campo-resumocurriculo" name="resumocurriculo" maxlength="1000" required="required"></textarea>
+                    </div>
+                    <div class="campo-cargo">
+                        <label for="campo-cargo">Cargo</label>
+                        <input type="text" id="campo-cargo" name="cargo" maxlength="40" required="required" />
+                    </div>
+                    <div class="campo-descricao-cargo">
+                        <label for="campo-descricao-cargo">Descrição do cargo</label>
+                        <input type="text" id="campo-descricao-cargo" nome="descricao-do-cargo" maxlength="500" required="required" />
+                    </div>
+                    <div class="campo-data-inicio">
+                        <label for="campo-data-inicio">Data de início</label>
+                        <input type="text" id="campo-data-inicio" nome="data-de-inicio" pattern="[0-3][0-9]\/[0-1][0-9]\/[\d]{4}" required="required" />
+                        <span class="data-status">Data inválida!</span>
+                    </div>
+                    <div class="botao-submit">
+                        <input type="submit" id="botao-submit" />
+                    </div>
+                    <div class="botao-bloqueio">
+                        <input type="button" id="botao-bloqueio" value="Bloquear fluxo"></input>
+                    </div>
                 </div>
             </fieldset>
         </form>
