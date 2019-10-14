@@ -9,6 +9,15 @@
         <form action="" method="GET" class="formulario">
             <fieldset>
                 <legend>Campos de cadastro</legend>
+                <div class="campo-texto">
+                    <label for="campo-texto">Nome</label>
+                    <input type="text" id="campo-texto" name="nome" maxlength="40" required="required" />
+                </div>
+                <div class="campo-email">
+                    <label for="campo-email">E-mail</label>
+                    <input type="text" id="campo-email" name="email" maxlength="50" pattern="\w+@\w+\.\w+" required="required" />
+                </div>
+
             </fieldset>
 
         </form>
