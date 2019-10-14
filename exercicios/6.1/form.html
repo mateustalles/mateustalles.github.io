@@ -6,9 +6,10 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
+        <div class="form-container">
         <form action="" method="GET" class="formulario">
             <fieldset>
-                <legend>Campos de cadastro</legend>
+                <legend>Dados Cadastrais</legend>
                 <div class="campo-texto">
                     <label for="campo-texto">Nome</label>
                     <input type="text" id="campo-texto" name="nome" maxlength="40" required="required" />
@@ -31,14 +32,17 @@
                 </div>
                 <div class="campo-estados">
                     <label for="campo-estados">Estado</label>
-                    <select id="campo-estados" name="estado">
+                    <select id="campo-estados" name="estado" required="required">
                     </select>
                 </div>
-                
+                <div class="campo-tipohabitacao">
+                    <label for="campo-tipohabitacao-casa campo-tipohabitacao-ap">Tipo de Habitação</label>
+                    <input type="radio" id="campo-tipohabitacao-casa" name="tipohabitacao" value="casa" required="required">Casa</input>
+                    <input type="radio" id="campo-tipohabitacao-ap" name="tipohabitacao" value="ap" required="required">Apartamento</input>
+                </div>
             </fieldset>
-
         </form>
-
+    </div>
         <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
