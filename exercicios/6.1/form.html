@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="form-container">
-            <form action="" method="GET" class="formulario">
+            <form action="" method="GET" name="formulario" class="formulario">
                 <fieldset>
                     <legend>Dados Cadastrais</legend>
                     <div class="campo-texto">
@@ -68,11 +68,15 @@
                     </div>
                     <div class="botao-validacao">
                             <input type="button" id="botao-validacao" value="Forçar validação"></input>
-                        </div>
+                    </div>
+                    <div class="botao-mostra-validacao">
+                        <input type="button" id="botao-mostra-validacao" value="Mostra validação"></input>
+                    </div>
                 </div>
             </fieldset>
         </form>
     </div>
+    <div class="validated-data"></div>
         <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
