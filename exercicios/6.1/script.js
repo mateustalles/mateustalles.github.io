@@ -7,7 +7,7 @@ function adicionaEstados() {
 let campoEstados = document.getElementById("campo-estados");
 let listaEstados = [{
     name: " ",
-    value: "n/a"
+    value: ""
 }, {
     name: "Acre",
     value: "ac"
@@ -157,6 +157,12 @@ botaoValidacao.addEventListener("click", function() {
 
 let botaoShowValidation = document.getElementById("botao-mostra-validacao");
 let validatedData = document.querySelector(".validated-data");
+let allLabels = document.getElementsByTagName("label");
+let labelForArray = [];
+for (let label of allLabels) {
+    labelForArray.push(label.htmlFor);
+}
+let labelIndex;
 function displayValidatedData() {
     let span = document.createElement("span");
     if ( validatedData.hasChildNodes() ) {
@@ -166,10 +172,12 @@ function displayValidatedData() {
     for (let campo of formulario.elements) {
         if ( ( campo.type == "text" || campo.tagName == "TEXTAREA" ||
          campo.checked || campo.tagName == "SELECT" ) && campo.checkValidity() ) {
+            labelIndex = labelForArray.indexOf(labelForArray.find(function(el) { return el == campo.id }))
             span;
-            span.innerHTML += "=> " + campo.name + ": " + campo.value + "<br>";
+            span.innerHTML += "=> " + allLabels[labelIndex].innerHTML + ": " + campo.value + "<br>";
             validatedData.appendChild(span);
             }
         }
     }
 botaoShowValidation.addEventListener("click", displayValidatedData);
+
