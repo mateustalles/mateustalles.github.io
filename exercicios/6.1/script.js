@@ -159,16 +159,13 @@ let botaoShowValidation = document.getElementById("botao-mostra-validacao");
 let validatedData = document.querySelector(".validated-data");
 let allLabels = document.getElementsByTagName("label");
 let labelForArray = [];
+let span = document.createElement("span");
 for (let label of allLabels) {
     labelForArray.push(label.htmlFor);
 }
 let labelIndex;
 function displayValidatedData() {
-    let span = document.createElement("span");
-    if ( validatedData.hasChildNodes() ) {
-        validatedData.removeChild(validatedData.childNodes[0]);
-        console.log("case1");
-    };
+    clear();
     for (let campo of formulario.elements) {
         if ( ( campo.type == "text" || campo.tagName == "TEXTAREA" ||
          campo.checked || campo.tagName == "SELECT" ) && campo.checkValidity() ) {
@@ -181,3 +178,14 @@ function displayValidatedData() {
     }
 botaoShowValidation.addEventListener("click", displayValidatedData);
 
+function clear() {
+    span = document.createElement("span");
+    if ( validatedData.hasChildNodes() ) {
+        validatedData.removeChild(validatedData.childNodes[0]);
+    };
+}
+let botaoClear = document.getElementById("botao-clear");
+botaoClear.addEventListener("click", function() {
+    clear();
+    formulario.reset();
+});
