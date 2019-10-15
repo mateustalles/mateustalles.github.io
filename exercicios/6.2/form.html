@@ -10,80 +10,83 @@
         <script defer src="scripts/script.js"></script>
     </head>
     <body>
-        <div class="form-container">
+        <div class="container">
             <form action="" method="GET" name="formulario" class="formulario">
-                <fieldset>
-                    <legend>Dados Cadastrais</legend>
-                    <div class="campo-texto">
+                    <h4 class="display-4 text-muted">Dados Cadastrais</h4>
+                   <div class="form-group campo-texto">
                         <label for="campo-texto">Nome</label>
-                        <input type="text" id="campo-texto" name="nome" maxlength="40" required="required" />
+                        <input class="form-control" type="text" id="campo-texto" name="nome" maxlength="40" required="required" />
                     </div>
-                    <div class="campo-email">
+                   <div class="form-group campo-email">
                         <label for="campo-email">E-mail</label>
-                        <input type="text" id="campo-email" name="email" maxlength="50" pattern="\w+@\w+\.\w+" required="required" />
+                        <input class="form-control" type="text" id="campo-email" name="email" maxlength="50" pattern="\w+@\w+\.\w+" required="required" />
                     </div>
-                    <div class="campo-cpf">
+                   <div class="form-group campo-cpf">
                         <label for="campo-cpf">CPF</label>
-                        <input type="text" id="campo-cpf" name="cpf" maxlength="11" required="required" />
+                        <input class="form-control" type="text" id="campo-cpf" name="cpf" maxlength="11" required="required" />
                     </div>
-                    <div class="campo-endereco">
+                   <div class="form-group campo-endereco">
                         <label for="campo-endereco">Endereço</label>
-                        <input type="text" id="campo-endereco" name="endereco" maxlength="200" required="required" />
+                        <input class="form-control" type="text" id="campo-endereco" name="endereco" maxlength="200" required="required" />
                     </div>
-                    <div class="campo-cidade">
+                   <div class="form-group campo-cidade">
                         <label for="campo-cidade">Cidade</label>
-                        <input type="text" id="campo-cidade" name="cidade" maxlength="28" required="required" />
+                        <input class="form-control" type="text" id="campo-cidade" name="cidade" maxlength="28" required="required" />
                     </div>
-                    <div class="campo-estados">
+                   <div class="form-group campo-estados">
                         <label for="campo-estados">Estado</label>
                         <select id="campo-estados" name="estado" required="required">
                         </select>
                     </div>
-                    <div class="campo-tipohabitacao">
+                   <div class="form-group campo-tipohabitacao">
                         <label for="campo-tipohabitacao">Tipo de Habitação</label>
                         <input type="radio" id="campo-tipohabitacao" name="tipohabitacao" value="casa" required="required">Casa</input>
                         <input type="radio" id="campo-tipohabitacao" name="tipohabitacao" value="ap" required="required">Apartamento</input>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Último emprego</legend>
-                    <div class="campo-resumocurriculo">
+                    <h4 class="display-4 text-muted">Último emprego</h4>
+                   <div class="form-group campo-resumocurriculo">
                         <label for="campo-resumocurriculo">Resumo do currículo</label>
-                        <textarea id="campo-resumocurriculo" name="resumocurriculo" maxlength="1000" required="required"></textarea>
+                        <textarea class="form-control" id="campo-resumocurriculo" name="resumocurriculo" maxlength="1000" required="required"></textarea>
                     </div>
-                    <div class="campo-cargo">
+                   <div class="form-group campo-cargo">
                         <label for="campo-cargo">Cargo</label>
-                        <input type="text" id="campo-cargo" name="cargo" maxlength="40" required="required" />
+                        <input class="form-control" type="text" id="campo-cargo" name="cargo" maxlength="40" required="required" />
                     </div>
-                    <div class="campo-descricao-cargo">
+                   <div class="form-group campo-descricao-cargo">
                         <label for="campo-descricao-cargo">Descrição do cargo</label>
-                        <input type="text" id="campo-descricao-cargo" nome="descricao-do-cargo" maxlength="500" required="required" />
+                        <input class="form-control" type="text" id="campo-descricao-cargo" nome="descricao-do-cargo" maxlength="500" required="required" />
                     </div>
-                    <div class="campo-data-inicio">
+                   <div class="form-group campo-data-inicio">
                         <label for="campo-data-inicio">Data de início</label>
-                        <input type="text" id="campo-data-inicio" nome="data-de-inicio" pattern="[0-3][0-9]\/[0-1][0-9]\/[\d]{4}" required="required" />
+                        <input class="form-control" type="text" id="campo-data-inicio" nome="data-de-inicio" pattern="[0-3][0-9]\/[0-1][0-9]\/[\d]{4}" required="required" />
                         <span class="data-status">Data inválida!</span>
                     </div>
-                    <div class="botao-submit">
-                        <input type="submit" id="botao-submit" />
+                    <div class="row">
+                        <div class="form-group botao-submit">
+                            <input class="btn btn-success" type="submit" id="botao-submit" />
+                        </div>
                     </div>
-                    <div class="botao-bloqueio">
-                        <input type="button" id="botao-bloqueio" value="Bloquear fluxo"></input>
+                    <div class="row">
+                        <div class="form-group botao-bloqueio">
+                            <input class="btn btn-warning" type="button" id="botao-bloqueio" value="Bloquear fluxo"></input>
+                        </div>
+                        <div class="form-group botao-validacao">
+                            <input class="btn btn-warning" type="button" id="botao-validacao" value="Forçar validação"></input>
+                        </div>
+                        <div class="form-group botao-mostra-validacao">
+                            <input class="btn btn-warning" type="button" id="botao-mostra-validacao" value="Mostra validação"></input>
+                        </div>
+                        <div class="form-group botao-clear">
+                            <input class="btn btn-warning" type="button" id="botao-clear" value="Limpar"></input>
+                        </div>
                     </div>
-                    <div class="botao-validacao">
-                            <input type="button" id="botao-validacao" value="Forçar validação"></input>
-                    </div>
-                    <div class="botao-mostra-validacao">
-                        <input type="button" id="botao-mostra-validacao" value="Mostra validação"></input>
-                    </div>
-                    <div class="botao-clear">
-                        <input type="button" id="botao-clear" value="Limpar"></input>
+                    <div class="row">
+                        <div class="form-text col-md-12 validated-data"></div>
                     </div>
                 </div>
-            </fieldset>
         </form>
     </div>
-    <div class="validated-data"></div>
+    
         <script type="text/javascript" src="script.js"></script>
     </body>
 </html>

@@ -1,5 +1,14 @@
+body {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
+
 .data-status {
     visibility: hidden;
     color: red;
 }
 
+.validated-data {
+    margin-bottom: 30px;    
+}
