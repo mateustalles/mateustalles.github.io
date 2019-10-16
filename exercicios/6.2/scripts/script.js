@@ -1,7 +1,10 @@
 window.addEventListener("load", function() {
     adicionaEstados();
-    checarData();
+    //checarData();
 });
+
+window.DatePickerX.setDefaults({ format : 'dd/mm/yyyy' })
+
 
 function adicionaEstados() {
 let campoEstados = document.getElementById("campo-estados");
@@ -98,33 +101,33 @@ let listaEstados = [{
     }
 }
 
-let botaoSubmit = document.getElementById("botao-submit")
-let campoData = document.getElementById("campo-data-inicio")
-let dataStatus = document.querySelector(".data-status")
-function checarData() {
-    campoData.addEventListener("change", function() {
-        dataStatus.innerText = "Data inválida!"
-        let stringData = campoData.value.split("/");
-        if ( !(stringData[0] > 0 && stringData[0] <= 31) ) {
-            statusInvalida();
-            dataStatus.innerText += " Dia inválido!"
-        }
-        if ( !(stringData[1] > 1 && stringData[1] <= 12) ) {
-            statusInvalida();
-            dataStatus.innerText += " Mês inválido!"
-        }
-        if ( !(stringData[2] > 0) ) {
-            statusInvalida();
-            dataStatus.innerText += " Ano inválido!"
-        }  
-        if ( stringData[0] > 0 && stringData[0] <= 31 && 
-              stringData[1] > 1 && stringData[1] && stringData[2] > 0 ) {
-            dataStatus.style.visibility = "hidden";
-            botaoSubmit.disabled = false;
-            return true;
-        }
-    });
-}
+//let botaoSubmit = document.getElementById("botao-submit")
+let campoData = document.getElementById("campo-data-inicio").DatePickerX.init();
+//let dataStatus = document.querySelector(".data-status")
+//function checarData() {
+  //  campoData.addEventListener("change", function() {
+  //      dataStatus.innerText = "Data inválida!"
+   //     let stringData = campoData.value.split("/");
+   //     if ( !(stringData[0] > 0 && stringData[0] <= 31) ) {
+    //        statusInvalida();
+    //        dataStatus.innerText += " Dia inválido!"
+    //    }
+    ///    if ( !(stringData[1] > 1 && stringData[1] <= 12) ) {
+    //        statusInvalida();
+     //       dataStatus.innerText += " Mês inválido!"
+     //   }
+     //   if ( !(stringData[2] > 0) ) {
+      //      statusInvalida();
+      //      dataStatus.innerText += " Ano inválido!"
+     //   }  
+     //   if ( stringData[0] > 0 && stringData[0] <= 31 && 
+     //         stringData[1] > 1 && stringData[1] && stringData[2] > 0 ) {
+     //       dataStatus.style.visibility = "hidden";
+    //        botaoSubmit.disabled = false;
+    //        return true;
+   //     }
+ //   });
+//}
 
 function statusInvalida() {
     dataStatus.style.visibility = "visible";
@@ -135,11 +138,11 @@ function statusInvalida() {
 
 let botaoBloquearFluxo = document.querySelector("#botao-bloqueio");
 let formulario = document.querySelector(".formulario");
-    botaoBloquearFluxo.addEventListener("click", function() {
-        for (let each of formulario.children) {
-            each.addEventListener("click", function(event){
+botaoBloquearFluxo.addEventListener("click", function(event) {
+        for (let campos of formulario.elements) {
+            campos.addEventListener("click", function(event){
             event.preventDefault()
-        });
+       });
     }
 });
 
@@ -169,7 +172,7 @@ function displayValidatedData() {
     for (let campo of formulario.elements) {
         if ( ( campo.type == "text" || campo.tagName == "TEXTAREA" ||
          campo.checked || campo.tagName == "SELECT" ) && campo.checkValidity() ) {
-            labelIndex = labelForArray.indexOf(labelForArray.find(function(el) { return el == campo.id }))
+            labelIndex = labelForArray.indexOf(labelForArray.find(function(item) { return item == campo.id }))
             span;
             span.innerHTML += "=> " + allLabels[labelIndex].innerHTML + ": " + campo.value + "<br>";
             validatedData.appendChild(span);
