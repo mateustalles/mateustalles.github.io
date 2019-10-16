@@ -1,10 +1,24 @@
 window.addEventListener("load", function() {
     adicionaEstados();
-    //checarData();
 });
-
 window.DatePickerX.setDefaults({ format : 'dd/mm/yyyy' })
 
+let formulario = document.querySelector(".formulario");
+
+new window.JustValidate('.js-form', {
+       messages: {
+           text: {           
+               required: 'Cê num preencheu porra!'
+           },
+        },
+        Rules: {
+            text: {
+                required: true,
+                minLength: 5,
+                maxLength: 300
+            }
+        }
+    });
 
 function adicionaEstados() {
 let campoEstados = document.getElementById("campo-estados");
@@ -101,33 +115,8 @@ let listaEstados = [{
     }
 }
 
-//let botaoSubmit = document.getElementById("botao-submit")
+let botaoSubmit = document.getElementById("botao-submit")
 let campoData = document.getElementById("campo-data-inicio").DatePickerX.init();
-//let dataStatus = document.querySelector(".data-status")
-//function checarData() {
-  //  campoData.addEventListener("change", function() {
-  //      dataStatus.innerText = "Data inválida!"
-   //     let stringData = campoData.value.split("/");
-   //     if ( !(stringData[0] > 0 && stringData[0] <= 31) ) {
-    //        statusInvalida();
-    //        dataStatus.innerText += " Dia inválido!"
-    //    }
-    ///    if ( !(stringData[1] > 1 && stringData[1] <= 12) ) {
-    //        statusInvalida();
-     //       dataStatus.innerText += " Mês inválido!"
-     //   }
-     //   if ( !(stringData[2] > 0) ) {
-      //      statusInvalida();
-      //      dataStatus.innerText += " Ano inválido!"
-     //   }  
-     //   if ( stringData[0] > 0 && stringData[0] <= 31 && 
-     //         stringData[1] > 1 && stringData[1] && stringData[2] > 0 ) {
-     //       dataStatus.style.visibility = "hidden";
-    //        botaoSubmit.disabled = false;
-    //        return true;
-   //     }
- //   });
-//}
 
 function statusInvalida() {
     dataStatus.style.visibility = "visible";
@@ -137,7 +126,7 @@ function statusInvalida() {
 
 
 let botaoBloquearFluxo = document.querySelector("#botao-bloqueio");
-let formulario = document.querySelector(".formulario");
+
 botaoBloquearFluxo.addEventListener("click", function(event) {
         for (let campos of formulario.elements) {
             campos.addEventListener("click", function(event){
@@ -148,6 +137,7 @@ botaoBloquearFluxo.addEventListener("click", function(event) {
 
 let botaoValidacao = document.querySelector("#botao-validacao");
 let inputsVazios = "";
+
 botaoValidacao.addEventListener("click", function() {
     for (let campo of formulario.elements) {
             if (campo.innerHTML == "") {
@@ -167,6 +157,7 @@ for (let label of allLabels) {
     labelForArray.push(label.htmlFor);
 }
 let labelIndex;
+
 function displayValidatedData() {
     clear();
     for (let campo of formulario.elements) {
@@ -187,7 +178,9 @@ function clear() {
         validatedData.removeChild(validatedData.childNodes[0]);
     };
 }
+
 let botaoClear = document.getElementById("botao-clear");
+
 botaoClear.addEventListener("click", function() {
     clear();
     formulario.reset();

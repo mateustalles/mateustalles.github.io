@@ -3,64 +3,65 @@
     <head>
         <title>FORMULÁRIO DE CADASTRO DE CURRÍCULOS</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/DatePickerX.min.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" href="css/justValidateTooltip.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet"  href="css/style.css" />
         <script src="scripts/jquery-3.4.1.min.js"></script>
         <script src="scripts/bootstrap.min.js"></script>
         <script src="scripts/DatePickerX.min.js"></script>
+        <script src="scripts/just-validate.min.js"></script>
         <script defer src="scripts/script.js"></script>
     </head>
     <body>
         <div class="container">
-            <form action="" method="GET" name="formulario" class="formulario">
+            <form action="" method="GET" name="formulario" class="js-form formulario">
                     <h4 class="display-4 text-muted">Dados Cadastrais</h4>
-                   <div class="form-group campo-texto">
-                        <label for="campo-texto">Nome</label>
-                        <input class="form-control" type="text" id="campo-texto" name="nome" maxlength="40" required="required" />
+                   <div class="just-validate-tooltip-container form-group campo-texto">
+                        Nome<input class="form-control" type="text" id="campo-texto" data-validate-field="name" name="nome" maxlength="40" required="required" />
                     </div>
-                   <div class="form-group campo-email">
+                   <div class="just-validate-tooltip-container form-group campo-email">
                         <label for="campo-email">E-mail</label>
-                        <input class="form-control" type="text" id="campo-email" name="email" maxlength="50" pattern="\w+@\w+\.\w+" required="required" />
+                        <input class="form-control" type="email" id="campo-email" data-validate-field="email" name="email" maxlength="50" required="required" />
                     </div>
-                   <div class="form-group campo-cpf">
+                   <div class="just-validate-tooltip-container form-group campo-cpf">
                         <label for="campo-cpf">CPF</label>
-                        <input class="form-control" type="text" id="campo-cpf" name="cpf" maxlength="11" required="required" />
+                        <input class="form-control" type="text" id="campo-cpf" name="cpf" data-validate-field="text" maxlength="11" required="required" />
                     </div>
-                   <div class="form-group campo-endereco">
+                   <div class="just-validate-tooltip-container form-group campo-endereco">
                         <label for="campo-endereco">Endereço</label>
-                        <input class="form-control" type="text" id="campo-endereco" name="endereco" maxlength="200" required="required" />
+                        <input class="form-control" type="text" id="campo-endereco" name="endereco" data-validate-field="text" maxlength="200" required="required" />
                     </div>
-                   <div class="form-group campo-cidade">
+                   <div class="just-validate-tooltip-container form-group campo-cidade">
                         <label for="campo-cidade">Cidade</label>
-                        <input class="form-control" type="text" id="campo-cidade" name="cidade" maxlength="28" required="required" />
+                        <input class="form-control" type="text" id="campo-cidade" name="cidade" data-validate-field="text" maxlength="28" required="required" />
                     </div>
-                   <div class="form-group campo-estados">
+                   <div class="just-validate-tooltip-container form-group campo-estados">
                         <label for="campo-estados">Estado</label>
-                        <select id="campo-estados" name="estado" required="required">
+                        <select id="campo-estados" name="estado" data-validate-field="required" required="required">
                         </select>
                     </div>
-                   <div class="form-group campo-tipohabitacao">
+                   <div class="just-validate-tooltip-container form-group campo-tipohabitacao">
                         <label for="campo-tipohabitacao">Tipo de Habitação</label>
-                        <input type="radio" id="campo-tipohabitacao" name="tipohabitacao" value="casa" required="required">Casa</input>
-                        <input type="radio" id="campo-tipohabitacao" name="tipohabitacao" value="ap" required="required">Apartamento</input>
+                        <input type="radio" id="campo-tipohabitacao" name="tipohabitacao" value="casa" data-validate-field="radio" required="required">Casa</input>
+                        <input type="radio" id="campo-tipohabitacao" name="tipohabitacao" value="ap" data-validate-field="radio" required="required">Apartamento</input>
                     </div>
                     <h4 class="display-4 text-muted">Último emprego</h4>
-                   <div class="form-group campo-resumocurriculo">
+                   <div class="just-validate-tooltip-container form-group campo-resumocurriculo">
                         <label for="campo-resumocurriculo">Resumo do currículo</label>
-                        <textarea class="form-control" id="campo-resumocurriculo" name="resumocurriculo" maxlength="1000" required="required"></textarea>
+                        <textarea class="form-control" id="campo-resumocurriculo" name="resumocurriculo" data-validate-field="text" maxlength="1000" required="required"></textarea>
                     </div>
-                   <div class="form-group campo-cargo">
+                   <div class="just-validate-tooltip-container form-group campo-cargo">
                         <label for="campo-cargo">Cargo</label>
-                        <input class="form-control" type="text" id="campo-cargo" name="cargo" maxlength="40" required="required" />
+                        <input class="form-control" type="text" id="campo-cargo" name="cargo" maxlength="40" data-validate-field="text" required="required" />
                     </div>
-                   <div class="form-group campo-descricao-cargo">
+                   <div class="just-validate-tooltip-container form-group campo-descricao-cargo">
                         <label for="campo-descricao-cargo">Descrição do cargo</label>
-                        <input class="form-control" type="text" id="campo-descricao-cargo" nome="descricao-do-cargo" maxlength="500" required="required" />
+                        <input class="form-control" type="text" id="campo-descricao-cargo" nome="descricao-do-cargo" data-validate-field="text" maxlength="500" required="required" />
                     </div>
-                   <div class="form-group campo-data-inicio">
+                   <div class="just-validate-tooltip-container form-group campo-data-inicio">
                         <label for="campo-data-inicio">Data de início</label>
-                        <input class="form-control" type="text" id="campo-data-inicio" nome="data-de-inicio" required="required" />
+                        <input class="form-control" type="text" id="campo-data-inicio" nome="data-de-inicio" data-validate-field="data" required="required" />
                         <span class="data-status">Data inválida!</span>
                     </div>
                     <div class="row">
