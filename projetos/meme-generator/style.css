@@ -1,63 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     overflow: auto;
     font-family: 'Courier New', Courier, monospace;
     background-color: white;
 }
+
 div {
     cursor: default;
 }
 
-.menu-div {
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px auto;
+    width: 90%;
+}
+
+.menu-div form{
+    display:flex;
     font-weight: 800;
+    flex-direction: column;
 }
 
 .btn-container {
-    position: absolute;
-    background-color: black;
-    text-align: center;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
     color: white;
-    padding: 10px;
     font-weight: 800;
 }
 
-.btn-font-increase,.btn-font-decrease {
-    position: relative;
-    margin-left: 50%;
-    transform: translate(-50%);
-    text-align: center;
-    background-color: white;
-    color: black;
-    width: 10px;
-    height: 10px;
-    padding: 3px;
+.btn-container div {
+    border: 1px solid white;
 }
 
-.text-button {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+.btn-container .div-styles {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: black;
+}
+
+.div-fonte {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-font-increase,.btn-font-decrease {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    width: 20px;
+    height: 20px;
+}
+
+.btn-container.borders {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.container-cores {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.paleta {
+    display: flex;
+    justify-content: space-around;
+}
+
+.miniatures {
+    display: flex;
+    width: 150px;
+    height: 300px;
+    padding: 20px 10px;
+    overflow: auto;
+    flex-direction: column;
+    background-color: black;
 }
 
 .image-container {
-    position: absolute;
-    display: inline-flex;
-    width: 50%;
+    display: flex;
+    align-self: center;
+    width: 100%;
     min-height: 50%;
-    margin-top: 35px;
-    margin-bottom: 65px;
-    left: 50%;
-    transform: translate(-50%);
-    right: auto;
-    padding: 0px;
-    text-align: center;
+    overflow: auto;
     font-size:50px;
-    resize: both;
-    overflow: hidden;
 }
 
 .image-meme {   
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
     border: 8px solid black;
 }
 
@@ -86,17 +134,9 @@ div {
     text-align: center;
 }
 
-.borders {
-    width: 150px;
-    margin-top: 140px;
-}
-
 .border-colors {
-    position: relative;
-    display: inline-block;
     width: 15px;
     height: 15px;
-    margin: 3px 1px;
 }
 .black{ background-color: black; border: 1px solid white;}
 .blue {background-color: blue;}
@@ -106,16 +146,6 @@ div {
 
 .border-width {
     border-width: 8px;
-}
-
-.miniatures {
-    position: absolute;
-    width: 150px;
-    right: 30px;
-    top: 280px;
-    max-height: 350px;
-    padding: 20px 10px;
-    overflow: auto;
 }
 
 .img-small {
