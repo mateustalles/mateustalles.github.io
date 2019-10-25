@@ -1,13 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+article section {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    flex-direction: column;
+    display: flex;
+    flex-basis: 70%;
+}
+
 .tabela-stomatopoda {
     text-align: center;
 }
 
 .pictures {
     max-width: 270px;
-    margin: 0 15px;
 }
 
 .pic-container {
     display: flex;
-    margin-left: 15px;
+    justify-content: space-between;
 }
