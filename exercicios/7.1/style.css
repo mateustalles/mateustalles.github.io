@@ -4,7 +4,7 @@ body {
     align-items: center;
 }
 
-section {
+.content-container {
     display: flex;
     justify-content: space-around;
 }
@@ -12,7 +12,7 @@ section {
 aside {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-left: 10px;
     margin-bottom: 50px;
@@ -46,7 +46,9 @@ article {
     max-width: 270px;
 }
 
-.bibliography {
+.bibliography, .form {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
+
