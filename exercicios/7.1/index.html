@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <title>STOMATOPODA: O LENDÁRIO PUGILISTA DOS MARES</title>
   </head>
   <body>
@@ -108,18 +109,20 @@
                 <a href="https://www.youtube.com/watch?v=E0Li1k5hGBE">Vídeo do Stomatopoda</a>
             </section>
             <section>
-                <form class="form">
+                <form method="POST" class="form">
                     <h3>Enquete: Qual parte da página você achou mais legal sobre o Stomatopoda?</h3>
-                    <label><input type="radio" value="cores">Suas cores magníficas!</label>
-                    <label><input type="radio" value="visao">Sua visão superpotente!</label>
-                    <label><input type="radio" value="soco">Seu soco hiper-mega-super-ULTRA-DEVASTADOR!</label>
-                    <button type="submit">Enviar!</button>
+                    <label><input class="radio" type="radio" value="cores">Suas cores magníficas!</label>
+                    <label><input class="radio" type="radio" value="visao">Sua visão superpotente!</label>
+                    <label><input class="radio" type="radio" value="soco">Seu soco hiper-mega-super-ULTRA-DEVASTADOR!</label>
+                    <button class="submit" type="submit">Enviar!</button>
                 </form>
             </section>
         </aside>
     </section>
+    <section class="poll-result">
+    </section>
     <footer>
-        Página criada por Mateus Talles durante o curso de Desenvolvimento de Software da Trybe! #Vqv!
+        Página criada por Mateus Talles durante o curso de Desenvolvimento de Software da Trybe! #Vqv! Outubro/2019
     </footer>
   </body>
 </html>
