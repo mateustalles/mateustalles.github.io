@@ -34,10 +34,14 @@ article {
 }
 
 .pictures {
-    max-width: 270px;
+    max-height: 180px;
 }
 
 .pic-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
+.pictures-2 {
+    max-width: 270px;
+}    
