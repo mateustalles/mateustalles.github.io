@@ -1,0 +1,13 @@
+.tabela-stomatopoda {
+    text-align: center;
+}
+
+.pictures {
+    max-width: 270px;
+    margin: 0 15px;
+}
+
+.pic-container {
+    display: flex;
+    margin-left: 15px;
+}
