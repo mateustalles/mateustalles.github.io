@@ -44,4 +44,9 @@ article {
 
 .pictures-2 {
     max-width: 270px;
-}    
+}
+
+.bibliography {
+    display: flex;
+    flex-direction: column;
+}
