@@ -1,5 +1,5 @@
 body {
-    font-size: 20px;
+    font-size: 24px;
     margin: 20px;
 }
 h1 {
@@ -15,4 +15,36 @@ img {
 
 figure {
 	margin: 25px 0;
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        background: #00f;
+        font-size: 20px;
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 2em;
+    };
+
+    h2 {
+        font-size: 1.5em;
+    };
+
+    img {
+    }
+
+    figure {
+        width: 370px;
+        flex-shrink: 0;
+    }
+
+    .album {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+
 }
