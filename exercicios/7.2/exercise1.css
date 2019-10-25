@@ -32,9 +32,6 @@ figure {
         font-size: 1.5em;
     };
 
-    img {
-    }
-
     figure {
         width: 370px;
         flex-shrink: 0;
