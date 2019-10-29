@@ -56,5 +56,6 @@ aside li {
     }
 
     .main-content {
+        text-align: justify;
     }
 }
