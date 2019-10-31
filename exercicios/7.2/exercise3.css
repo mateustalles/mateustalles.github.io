@@ -80,3 +80,61 @@
     padding: 20px;
     height: 1%;
   }
+
+@media screen and (max-width: 480px){
+  #aside {
+    display: none;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  #navigation ul {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 90px;
+  }
+  
+  #navigation ul a {
+    border: none;
+  }
+
+  #header {
+    position: fixed;
+    display: flex;
+    max-width: 100%;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+  }
+
+  #header h1 {
+    display: flex;
+    padding: 10px 10px;
+  }
+}
+
+@media print {
+  #id, #navigation, #footer {
+    display: none;
+  }
+  #content-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+  }
+  
+  #aside {
+    margin: 0 0 0 4%;
+  }
+
+  #content-container p {
+    margin-bottom: 5px;
+  }
+}
