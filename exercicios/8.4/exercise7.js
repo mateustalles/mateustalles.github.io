@@ -2,8 +2,22 @@ const assert = require('assert')
 
 // escreva aqui o seu código
 class User {
-    constructor (){
-        this.name == undefined ? this.name = String("  ") : this.name = ""
+    constructor () {
+        this._name =  ""
+    }
+
+    get name() {
+        if (this._name === undefined) {
+            return ""
+        }
+        else {
+            return this._name
+        }
+    }
+   
+
+    set name (newName) {
+       newName == undefined || null ? this._name = "" : this._name = newName
     }
 }
 
