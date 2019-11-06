@@ -3,32 +3,32 @@
     width: 100%;
     background: #fff;
   }
-  
+
   #header {
     background: #ccc;
     padding: 20px;
   }
-  
+
   #header h1 {
     margin: 0;
   }
-  
+
   #navigation {
     float: left;
     width: 100%;
     background: #333;
   }
-  
+
   #navigation ul {
     margin: 0;
     padding: 0;
   }
-  
+
   #navigation ul li {
     list-style-type: none;
     display: inline;
   }
-  
+
   #navigation li a {
     display: block;
     float: left;
@@ -37,17 +37,17 @@
     text-decoration: none;
     border-right: 1px solid #fff;
   }
-  
+
   #navigation li a:hover {
     background: #383;
   }
-  
+
   #content-container {
     float: left;
     width: 100%;
     background: #FFF;
   }
-  
+
   #content {
     clear: left;
     float: left;
@@ -56,11 +56,11 @@
     margin: 0 0 0 4%;
     display: inline;
   }
-  
+
   #content h2 {
     margin: 0;
   }
-  
+
   #aside {
     float: right;
     width: 33%;
@@ -68,11 +68,11 @@
     margin: 0 3% 0 0;
     display: inline;
   }
-  
+
   #aside h3 {
     margin: 0;
   }
-  
+
   #footer {
     clear: left;
     background: #ccc;
@@ -81,9 +81,15 @@
     height: 1%;
   }
 
-@media screen and (max-width: 480px){
+
+@media screen and (max-width: 640px) {
+
   #aside {
     display: none;
+  }
+
+  #content {
+    min-width: 95%;
   }
 
   body {
@@ -91,32 +97,23 @@
   }
 
   img {
-    max-width: 100%;
+    max-width: 98%
   }
 
   #navigation ul {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    margin-top: 90px;
-  }
-  
-  #navigation ul a {
-    border: none;
+    margin-top: 100px;
   }
 
   #header {
     position: fixed;
-    display: flex;
-    max-width: 100%;
-    width: 80%;
-    padding: 0;
-    margin: 0;
+    width: 87%;
+    max-width: 87%;
   }
 
-  #header h1 {
-    display: flex;
-    padding: 10px 10px;
+  #navigation ul a {
+    border: none;
   }
 }
 
@@ -129,7 +126,7 @@
     flex-direction: column;
     font-size: 0.8em;
   }
-  
+
   #aside {
     margin: 0 0 0 4%;
   }
