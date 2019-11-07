@@ -173,7 +173,19 @@
       animation: toRight 3s 2s infinite ease-in-out;
     }
 
+    #exercise-12 {
+      animation: fadeOut 1s forwards;
+      animation-play-state: paused;
+    }
+    #exercise-12:active {
+      animation-play-state: running;
+    }
 
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
