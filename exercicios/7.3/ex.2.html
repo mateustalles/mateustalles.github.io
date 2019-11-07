@@ -98,6 +98,17 @@
     #exercise-6-square:hover ~ #exercise-6 {
       animation-play-state: running;
     }
+
+    #exercise-7 {
+      animation: sizeInherit 1s alternate infinite;
+    }
+
+    @keyframes sizeInherit {
+      to {
+        width: inherit;
+        height: inherit;
+      }
+    }
   </style>
 </head>
 <body>
