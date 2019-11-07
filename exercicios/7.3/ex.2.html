@@ -71,6 +71,33 @@
       animation-play-state: running;
     }
 
+    #exercise-5 {
+      position: relative;
+      left: 0%;
+      animation: toRight 5s;
+      animation-play-state: paused;
+    }
+
+    #section-5:hover > #exercise-5 {
+      animation-play-state: running;
+    }
+
+    #exercise-6 {
+      position: relative;
+      right: 0%;
+      animation: toLeft 5s;
+      animation-play-state: paused;
+    }
+
+    @keyframes toLeft {
+      to {
+        right: 96%;
+      }
+    }
+
+    #exercise-6-square:hover ~ #exercise-6 {
+      animation-play-state: running;
+    }
   </style>
 </head>
 <body>
