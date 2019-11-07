@@ -44,7 +44,7 @@
     #exercise-1 {
       position: relative;
       left: 0%;
-      animation: toRight 3s 1s;
+      animation: toRight 3s 1s, spinnin 3s 1s infinite;
     }
 
     @keyframes toRight {
@@ -53,22 +53,28 @@
       }
     }
 
+    @keyframes spinnin {
+      to {
+        transform: rotate(900deg);
+      }
+    }
+
     #exercise-2 {
       position: relative;
       left: 0%;
-      animation: toRight 2s 2s forwards;
+      animation: toRight 2s 2s forwards, spinnin 2s 2s infinite;
     }
 
     #exercise-3 {
       position: relative;
       left: 0%;
-      animation: toRight 1s 1s 2 alternate;
+      animation: toRight 1s 1s 2 alternate, spinnin 1s 1s alternate infinite;
     }
 
     #exercise-4 {
       position: relative;
       left: 0%;
-      animation: toRight 5s;
+      animation: toRight 5s, spinnin 5s infinite;
       animation-play-state: paused;
     }
 
@@ -79,7 +85,7 @@
     #exercise-5 {
       position: relative;
       left: 0%;
-      animation: toRight 5s;
+      animation: toRight 5s, spinnin 5s infinite;
       animation-play-state: paused;
     }
 
@@ -90,7 +96,7 @@
     #exercise-6 {
       position: relative;
       right: 0%;
-      animation: toLeft 5s;
+      animation: toLeft 5s, spinnin 5s reverse infinite;
       animation-play-state: paused;
     }
 
@@ -150,33 +156,45 @@
 
     #exercise-11_1 {
       position: relative;
+      background-position: right;
       left: 0%;
-      animation: toRight 3s 2s infinite;
+      animation: toRightTraillin 3s 2s infinite;
     }
 
     #exercise-11_2 {
       position: relative;
+      background-position: right;
       left: 0%;
-      animation: toRight 3s 2s infinite ease-in-out;
+      animation: toRightTraillin 3s 2s infinite ease-in-out;
     }
 
     #exercise-11_3 {
       position: relative;
+      background-position: right;
       left: 0%;
-      animation: toRight 3s 2s infinite ease-in;
+      animation: toRightTraillin 3s 2s infinite ease-in;
     }
 
     #exercise-11_4 {
       position: relative;
+      background-position: right;
       left: 0%;
-      animation: toRight 3s 2s infinite ease-out;
+      animation: toRightTraillin 3s 2s infinite ease-out;
     }
 
     #exercise-11_5 {
       position: relative;
+      background-position: right;
       left: 0%;
-      animation: toRight 3s 2s infinite ease-in-out;
+      animation: toRightTraillin 3s 2s infinite ease-in-out;
     }
+
+    @keyframes toRightTraillin {
+      to {
+        width: 100%;
+      }
+    }
+
 
     #exercise-12 {
       animation: fadeOut 1s forwards;
