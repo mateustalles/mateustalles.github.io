@@ -1,54 +1,69 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-left: 8px;
 }
 
-.content-container {
-    display: flex;
-    justify-content: space-around;
+body p{
+    text-align: justify;
+}
+
+aside{
+    padding: 0 8px;
+    right: 0;
+    top: 0;
+}
+header {
+    height: 160px;
+}
+
+iframe {
+    width: 100%;
+    height: 350px;
+}
+
+nav {
+    height: 120px;
 }
 
 aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 10px;
-    margin-bottom: 50px;
-}
-
-article section {
-    display: flex;
-    flex-direction: column;
+    min-height: 400px
 }
 
 article {
-    flex-direction: column;
-    display: flex;
-    flex-basis: 70%;
+    min-height: 400px;
 }
 
-.tabela-stomatopoda {
+table, th, td {
     text-align: center;
+    border: 1px solid black;
+    padding: 1px;
+}
+
+table {
+    max-width: none;
+    font-size: 12px;
 }
 
 .pictures {
-    max-height: 180px;
+    max-width: 95%;
+    width: 95%;
+    margin-bottom: 5px;
 }
 
-.pic-container {
-    display: flex;
-    justify-content: space-around;
-}
-
-.pictures-2 {
-    max-width: 270px;
-}
-
-.bibliography, .form {
+.form {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 
+h3 {
+    margin-top: 6px;
+}
+
+@media screen and (max-width: 400px) {
+    table, table td, table tr, table th { display: flex; justify-content: center; flex-grow:1; flex-direction: column; text-align: center; }
+  table th, table td { margin: 0; width: 140px; }
+  table td  { padding-left: 0;  }
+  .table-title {width: 100%; border: none; text-align: center; font-size: 22px;}
+  table thead { display: none; }
+  .tr-1 {float: left}
+  .tr-2 {float: right}
+}
