@@ -1,0 +1,54 @@
+.p-1 {
+  font-size: 72px;
+  opacity: 0;
+  color: black;
+  animation-name: fadein;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 10s;
+}
+
+@keyframes fadein {
+  0% {
+    color: black;
+    font-size: 72px;
+    opacity: 0;
+  }
+  60% {
+    color: silver;
+    font-size: 200px;
+  }
+  100% {
+    color: darkred;
+    opacity: 1;
+    font-size: 140px;
+  }
+}
+
+.p-container {
+  overflow: hidden;
+  text-align: right;
+}
+
+.p-2 {
+  font-size: 36px;
+  margin-right: 100%;
+  /* width: 300%; */
+  animation: toright 3s ease-in alternate infinite;
+}
+
+.p-2:hover {
+  animation-play-state: paused;
+}
+
+@keyframes toright {
+  to {
+    margin-right: 0%;
+    /* width: 100%; */
+  }
+}
+
+#button {
+  margin-right: 100%;
+  animation: toright 2s 3 forwards both;
+}

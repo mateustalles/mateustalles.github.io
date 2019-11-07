@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercícios 7.3</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 90%;
+      height: 100px;
+      border: 1px solid red;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    .flex-direction__column { flex-direction: column; }
+    .justify-content__space-between { justify-content: space-between; }
+    .justify-content__center { justify-content: center; }
+    .align-items__flex-start { align-items: flex-start; }
+    .automatic-box-height { height: auto; }
+    .green { background-color: green; }
+    .blue { background-color: blue; }
+    .red { background-color: red; }
+    .yellow { background-color: yellow; }
+    .black { background-color: black; }
+    .medium {
+      width: 50px;
+      height: 50px;
+      background-image: url('cab_gta2.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .ball { background-image: url('pizza.jpeg'); background-position: center; background-size:contain; height: 50px; width: 50px; border-radius: 100%; }
+
+
+    #exercise-1 {
+      position: relative;
+      left: 0%;
+      animation: toRight 3s 1s, spinnin 3s 1s infinite;
+    }
+
+    @keyframes toRight {
+      to {
+        left: 90%;
+      }
+    }
+
+    @keyframes spinnin {
+      to {
+        transform: rotate(900deg);
+      }
+    }
+
+    #exercise-2 {
+      position: relative;
+      left: 0%;
+      animation: toRight 2s 2s forwards, spinnin 2s 2s infinite;
+    }
+
+    #exercise-3 {
+      position: relative;
+      left: 0%;
+      animation: toRight 1s 1s 2 alternate, spinnin 1s 1s alternate infinite;
+    }
+
+    #exercise-4 {
+      position: relative;
+      left: 0%;
+      animation: toRight 5s, spinnin 5s infinite;
+      animation-play-state: paused;
+    }
+
+    #exercise-4:hover {
+      animation-play-state: running;
+    }
+
+    #exercise-5 {
+      position: relative;
+      left: 0%;
+      animation: toRight 5s, spinnin 5s infinite;
+      animation-play-state: paused;
+    }
+
+    #section-5:hover > #exercise-5 {
+      animation-play-state: running;
+    }
+
+    #exercise-6 {
+      position: relative;
+      right: 0%;
+      animation: toLeft 5s, spinnin 5s reverse infinite;
+      animation-play-state: paused;
+    }
+
+    @keyframes toLeft {
+      to {
+        right: 96%;
+      }
+    }
+
+    #exercise-6-square:hover ~ #exercise-6 {
+      animation-play-state: running;
+    }
+
+    #exercise-7 {
+      animation: sizeInherit 1s alternate infinite;
+    }
+
+    @keyframes sizeInherit {
+      to {
+        width: inherit;
+        height: inherit;
+      }
+    }
+
+    #exercise-8 {
+      animation: toYellow 4s;
+    }
+
+    @keyframes toYellow {
+      to {
+        background-color: yellow;
+      }
+    }
+
+    #exercise-9 {
+      animation: manyColors 4s alternate infinite;
+    }
+
+    @keyframes manyColors {
+      0% {
+        background-color: red;
+      }
+      33% {
+        background-color: yellow;
+      }
+      66% {
+        background-color: blue;
+      }
+      100% {
+        background-color: green;
+      }
+    }
+
+    #exercise-10 {
+      animation: sizeInherit 1s alternate infinite, manyColors 4s alternate infinite;
+    }
+
+    #exercise-11_1 {
+      position: relative;
+      background-position: right;
+      left: 0%;
+      animation: toRightTraillin 3s 2s infinite;
+    }
+
+    #exercise-11_2 {
+      position: relative;
+      background-position: right;
+      left: 0%;
+      animation: toRightTraillin 3s 2s infinite ease-in-out;
+    }
+
+    #exercise-11_3 {
+      position: relative;
+      background-position: right;
+      left: 0%;
+      animation: toRightTraillin 3s 2s infinite ease-in;
+    }
+
+    #exercise-11_4 {
+      position: relative;
+      background-position: right;
+      left: 0%;
+      animation: toRightTraillin 3s 2s infinite ease-out;
+    }
+
+    #exercise-11_5 {
+      position: relative;
+      background-position: right;
+      left: 0%;
+      animation: toRightTraillin 3s 2s infinite ease-in-out;
+    }
+
+    @keyframes toRightTraillin {
+      to {
+        width: 100%;
+      }
+    }
+
+
+    #exercise-12 {
+      animation: fadeOut 1s forwards;
+      animation-play-state: paused;
+    }
+    #exercise-12:active {
+      animation-play-state: running;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <ol>
+    <li>
+      <section>
+        <div id="exercise-1" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section>
+        <div id="exercise-2" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section>
+        <div id="exercise-3" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section>
+        <div id="exercise-4" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section id="section-5">
+        <div id="exercise-5" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content__space-between">
+        <div id="exercise-6-square" class="blue medium"></div>
+        <div id="exercise-6" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content__center">
+        <div id="exercise-7" class="blue medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content__center">
+        <div id="exercise-8" class="red medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content__center">
+        <div id="exercise-9" class="red medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content__center">
+        <div id="exercise-10" class="red medium"></div>
+      </section>
+    </li>
+      <li>
+        <section class="flex-direction__column align-items__flex-start automatic-box-height">
+          <div id="exercise-11_1" class="red medium"></div>
+          <div id="exercise-11_2" class="blue medium"></div>
+          <div id="exercise-11_3" class="green medium"></div>
+          <div id="exercise-11_4" class="yellow medium"></div>
+          <div id="exercise-11_5" class="black medium"></div>
+        </section>
+      </li>
+      <li>
+        <section class="justify-content__center">
+          <div id="exercise-12" class="black medium"></div>
+        </section>
+      </li>
+  </ol>
+</body>
+</html>
