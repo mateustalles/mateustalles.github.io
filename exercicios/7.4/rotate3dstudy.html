@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <style>
+      @keyframes square-rotating {
+        0% {
+          transform: rotate3d(1, 1, 1, 150deg);
+        }
+        100% {
+          transform: rotate3d(-1, -1, -1, 150deg);
+        }
+      }
+
+      @keyframes square-rotating-2 {
+        0% {
+          transform: rotate3d(1, 1, 0, 150deg);
+        }
+        100% {
+          transform: rotate3d(-1, -1, 0, 150deg);
+        }
+      }
+
+      @keyframes square-rotating-3 {
+        0% {
+          transform: rotate3d(1, 0, 0, 150deg);
+        }
+        100% {
+          transform: rotate3d(-1, 0, 0, 150deg);
+        }
+      }
+
+      @keyframes square-rotating-4 {
+        0% {
+          transform: rotate3d(1, 0, 1, 150deg);
+        }
+        100% {
+          transform: rotate3d(-1, 0, -1, 150deg);
+        }
+      }
+
+      @keyframes square-rotating-5 {
+        0% {
+          transform: rotate3d(0, 0, 1, 150deg);
+        }
+        100% {
+          transform: rotate3d(0, 0, -1, 150deg);
+        }
+      }
+
+      @keyframes square-rotating-6 {
+        0% {
+          transform: rotate3d(0, 1, 0, 150deg);
+        }
+        100% {
+          transform: rotate3d(0, -1, 0, 150deg);
+        }
+      }
+
+      .square-rotating {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation: square-rotating 2000ms linear infinite;
+      }
+
+      .square-rotating-2 {
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+        animation: square-rotating-2 2000ms linear infinite;
+      }
+
+      .square-rotating-3 {
+        width: 100px;
+        height: 100px;
+        background-color: greenyellow;
+        animation: square-rotating-3 2000ms linear infinite;
+      }
+
+      .square-rotating-4 {
+        width: 100px;
+        height: 100px;
+        background-color: peru;
+        animation: square-rotating-4 2000ms linear infinite;
+      }
+
+      .square-rotating-5 {
+        width: 100px;
+        height: 100px;
+        background-color: powderblue;
+        animation: square-rotating-5 2000ms linear infinite;
+      }
+
+      .square-rotating-6 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid white;
+        background-color: black;
+        animation: square-rotating-6 2000ms linear infinite;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="square-rotating"></div>
+    <div class="square-rotating-2"></div>
+    <div class="square-rotating-3"></div>
+    <div class="square-rotating-4"></div>
+    <div class="square-rotating-5"></div>
+    <div class="square-rotating-6"></div>
+  </body>
+</html>

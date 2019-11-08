@@ -1,0 +1,11 @@
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+
+}
+
+div:hover {
+  width: 300px;
+  transition: width 2s ease-in-out;
+}
