@@ -1,0 +1,280 @@
+body {
+    font-family: 'Modern Antiqua', cursive;
+    background-image: url(images/colored_vintage_paper_texture_10_light_yellow.jpg);
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#profeta-logo {
+    max-width: 100%
+}
+
+a {
+    font-weight: bold;
+    font-size: 1em;
+    color: black;
+    text-decoration: none;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.halt-animation {
+    animation: none !important;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+ .owl {
+    opacity: 0;
+    max-width: 100px;
+    animation: moviment 3s steps(60, end) 3s 3 alternate forwards ;
+} 
+
+@keyframes moviment {
+    0% {
+        opacity: 1;
+        transform: translate(0px,0px);
+    }
+    20% {
+
+        transform: translate(240px, 30px);
+    }
+    40% {
+        transform: translate(0px, 140px);
+    }
+
+    60% {
+        transform: translate(500px, 0px)
+    }
+
+    80% {
+        transform: translate(320px, 30px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(450px, 190px)
+    }
+}
+
+p {
+    margin-top:5px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.main section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section article, .banner-section {
+    background-image: url(images/colored_vintage_paper_texture_10_light_yellow.jpg);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 2px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+section aside {
+    max-width: 100%;
+}
+
+.video {
+    max-width: 100%;
+}
+
+section article h2 { 
+    margin-top: 35px;
+    display: flex;
+}
+
+.dingbait {
+    max-width: 50px;
+    align-self: baseline;
+}
+
+.broom {
+    margin-left: 25px;
+    max-height: 200px;
+}
+
+
+.banner-section * {
+    text-align: center;
+    margin: 5px auto;
+}
+
+@keyframes broom {
+    20% {
+        transform: scale(1.8), rotate(180deg);
+    }
+    40% {
+        transform: scale(1.8) translateY(-100px) ;
+    }
+    60% {
+        transform: scale(1.8) translateY(-100px) skew(80deg) ;
+    }
+    85% {
+        transform: scale(1.8) translateY(-100px) skew(160deg) ;
+    }
+    100% {
+        transform: scale(1.8) skew(160deg) translateX(1000px) translateY(-1000px) ;
+    }
+}
+
+@keyframes section-effect {
+   to {
+        transform: scale(1.5);
+        font-weight: bold;
+     }
+}
+
+.star {
+    max-width: 300px;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    z-index: -1;
+    opacity: 0.3;
+    animation: star-movement 6s steps(30, end) infinite;
+}
+
+@keyframes star-movement {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.article-animation-small {
+    animation: section-effect 4s steps(10, end) forwards;
+}
+
+@media screen and (max-width: 760px) and (orientation: landscape) {
+
+    body {
+        max-width: 85%;
+    }
+
+    @keyframes moviment {
+        0% {
+            opacity: 1;
+            transform: translate(0px,0px);
+        }
+        20% {
+    
+            transform: translate(240px, 30px);
+        }
+        40% {
+            transform: translate(0px, 140px);
+        }
+    
+        60% {
+            transform: translate(400px, 0px)
+        }
+    
+        80% {
+            transform: translate(320px, 30px)
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translate(400px, 190px)
+        }
+    }
+
+    .owl {
+        opacity: 0;
+        max-width: 100px;
+        animation: moviment 3s steps(60, end) 3s 3 alternate forwards ;
+    } 
+  
+}
+
+@media screen and (min-width: 760px) {
+
+    body {
+        max-width: 80%;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    #profeta-logo {
+        max-width: 80%
+    }
+    
+    .main section {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    section article {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+    }
+
+    .main section:nth-child(1) > article:nth-child(1) {
+        flex-basis: 40%;
+    }
+
+    .main section:nth-child(2) > article:nth-child(1) {
+        flex-basis: 60%;
+    }
+
+    .main section:nth-child(3) > article:nth-child(1) {
+        flex-basis: 40%;
+    }
+
+    .star {
+        animation: star-movement 6s infinite ease-in;
+    }
+
+    .owl {
+        display: block;
+        opacity: 0;
+        max-width: 100px;
+        transition:
+            opacity 1s,
+            transform 3s;
+        animation: moviment 3s steps(60) 3s 3 alternate forwards;
+    }
+
+    .owl:hover {
+        animation-play-state: paused;
+    }
+
+    .article-animation-big {
+        animation: section-effect 4s forwards ease-in;
+    }
+}
