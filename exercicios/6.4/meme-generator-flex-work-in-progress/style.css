@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+}
+
+div {
+    cursor: default;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px auto;
+    width: 90%;
+}
+
+.menu-div form{
+    display:flex;
+    font-weight: 800;
+    flex-direction: column;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    color: white;
+    font-weight: 800;
+}
+
+.btn-container div {
+    border: 1px solid white;
+}
+
+.btn-container .div-styles {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: black;
+}
+
+.div-fonte {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-font-increase,.btn-font-decrease {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    width: 20px;
+    height: 20px;
+}
+
+.btn-container.borders {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.container-cores {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.paleta {
+    display: flex;
+    justify-content: space-around;
+}
+
+.miniatures {
+    display: flex;
+    width: 150px;
+    height: 300px;
+    padding: 20px 10px;
+    overflow: auto;
+    flex-direction: column;
+    background-color: black;
+}
+
+.image-container {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    min-height: 50%;
+    overflow: auto;
+    font-size:50px;
+}
+
+.image-meme {   
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+    border: 8px solid black;
+}
+
+.text {
+    position:absolute;
+    text-align: center;
+    margin: 0px 5px;
+    max-width: 100%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    word-break:break-all;
+    white-space:normal;
+}
+.text.up{
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    text-align: center;
+}
+
+.text.down {
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    text-align: center;
+}
+
+.border-colors {
+    width: 15px;
+    height: 15px;
+}
+.black{ background-color: black; border: 1px solid white;}
+.blue {background-color: blue;}
+.green {background-color: #0FA36B;}
+.gold {background-color: goldenrod;}
+.red {background-color: red}
+
+.border-width {
+    border-width: 8px;
+}
+
+.img-small {
+    max-width: 100%;
+    margin: 5px 0px;
+}
