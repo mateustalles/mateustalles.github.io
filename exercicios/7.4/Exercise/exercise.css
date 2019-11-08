@@ -1,0 +1,20 @@
+img {
+  max-width: 77px;
+  margin: 9px;
+}
+
+.transition {
+  transition: transform 1s, filter 1s ;
+}
+
+.rotateFx {
+  transform: rotate(900deg)
+}
+
+.scaleFx {
+  transform: scale(2.0, 2.0)
+}
+
+.invertFx {
+  filter: invert(100%)
+}
