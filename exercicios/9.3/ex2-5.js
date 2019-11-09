@@ -7,7 +7,7 @@ const promise = new Promise ((resolve, reject) => {
     }
     return newArray
   }
-  const sumOfAllRandoms = () => tenRandom().reduce((acc, random) => acc += random)
+  const sumOfAllRandoms = () => tenRandom().reduce((acc, random) => acc += random, 0)
 
   const theComparator = (what) => {
     const newNumber = what()
@@ -17,7 +17,17 @@ const promise = new Promise ((resolve, reject) => {
   theComparator(sumOfAllRandoms)
 })
 
+const theSumPromise = (array) => {
+    return new Promise ((resolve, reject) => {
+    const yetAnotherArraySum = (array) => array.reduce((acc, element) => acc += element, 0)
+    resolve(yetAnotherArraySum(array))
+  })
+}
 
 promise
-  .then (number => [number / 2, number / 3 , number / 5, number / 10])
+  .then (number => {
+    console.log ([number / 2, number / 3 , number / 5, number / 10])
+    return theSumPromise([number / 2, number / 3 , number / 5, number / 10])
+  })
+  .then (result => console.log(result))
   .catch (message => console.log(message))
