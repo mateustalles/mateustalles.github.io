@@ -12,11 +12,12 @@ const promise = new Promise ((resolve, reject) => {
   const theComparator = (what) => {
     const newNumber = what()
     console.log(newNumber)
-    newNumber < 8000 ? resolve("That's right! ") : reject('Not this time...')
+    newNumber < 8000 ? resolve(newNumber) : reject('Not this time...')
   }
   theComparator(sumOfAllRandoms)
 })
 
+
 promise
-  .then (message => console.log(message))
+  .then (number => console.log([number / 2, number / 3 , number / 5, number / 10]))
   .catch (message => console.log(message))
