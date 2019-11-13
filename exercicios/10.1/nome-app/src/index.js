@@ -52,18 +52,18 @@ return (<div>
   <div className="flex-row d-flex justify-content-around">
       <div className="col-sm-4">
           <Card
-            featureImage="https://c7.uihere.com/files/180/475/832/metal-gear-solid-4-guns-of-the-patriots-metal-gear-2-solid-snake-metal-gear-solid-3-snake-eater-snakes.jpg"
-            title="Solid Snake"
-            description="The most badass superhero ever!"
-            link="https://pt.wikipedia.org/wiki/Solid_Snake"
+            featureImage="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d293becc-581e-47ac-a42e-64d2d6b91a40/db3q2fi-2439c882-3b68-4fb7-93f2-00ddb9777e74.jpg/v1/fill/w_600,h_893,q_75,strp/ghost_in_the_shell_by_kelogsloops_db3q2fi-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODkzIiwicGF0aCI6IlwvZlwvZDI5M2JlY2MtNTgxZS00N2FjLWE0MmUtNjRkMmQ2YjkxYTQwXC9kYjNxMmZpLTI0MzljODgyLTNiNjgtNGZiNy05M2YyLTAwZGRiOTc3N2U3NC5qcGciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.w0dHavGSoh5QPttKIT_NzoPKXGWJn8Mjv7Em4X9qYLo"
+            title="Major Motoko Kusanagi"
+            description="deviation by kelogsloops"
+            link="https://www.deviantart.com/kelogsloops/art/Ghost-In-The-Shell-671382990"
           />
       </div>
       <div className="col-sm-4">
         <Card 
           featureImage="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0bff2a1e-51c8-4afb-8c19-6db3a51db709/d9r66ss-7df3159c-e487-49ee-9274-bda9c938c3a9.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBiZmYyYTFlLTUxYzgtNGFmYi04YzE5LTZkYjNhNTFkYjcwOVwvZDlyNjZzcy03ZGYzMTU5Yy1lNDg3LTQ5ZWUtOTI3NC1iZGE5YzkzOGMzYTkuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.IzRrAgmn9mgL1kbnw3LRWRK17hRqijWhcC9l8MsXQb8"
           title="Snake Plissken"
-          description="Escape From L.A and Escape From N.Y"
-          link="https://pt.wikipedia.org/wiki/Snake_Plissken"
+          description="deviation by cyberaeon"
+          link="https://www.deviantart.com/cyberaeon/art/Snake-Plissken-589833964"
         />
       </div>
   </div>
