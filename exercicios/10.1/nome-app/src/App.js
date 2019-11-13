@@ -17,6 +17,7 @@ function App() {
     <h1>Lista de tarefas</h1>
     <ol>{taskList.map(task => <li>{task}</li>)}</ol>
     {JSX}
+        {/*This is JSX*/}
   </div>
   );
   
