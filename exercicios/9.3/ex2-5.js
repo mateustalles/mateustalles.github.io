@@ -1,33 +1,41 @@
-const promise = new Promise ((resolve, reject) => {
-  const tenRandom = () => {
-    const newArray = [];
-    for (let i = 0 ; i < 10 ; i++) {
-      let randomOne = Math.pow(Math.floor(Math.random()*50) + 1, 2)
-      newArray.push(randomOne)
+async function promise() {
+
+    const tenRandom = () => {
+      const newArray = [];
+      for (let i = 0 ; i < 10 ; i++) {
+        let randomOne = Math.pow(Math.floor(Math.random()*50) + 1, 2)
+        newArray.push(randomOne)
+      }
+      return newArray
     }
-    return newArray
-  }
-  const sumOfAllRandoms = () => tenRandom().reduce((acc, random) => acc += random, 0)
 
-  const theComparator = (what) => {
-    const newNumber = what()
-    console.log(newNumber)
-    newNumber < 8000 ? resolve(newNumber) : reject('É mais de 8000! Essa promise deve ser quebrada.')
-  }
-  theComparator(sumOfAllRandoms)
-})
+    const newNumber = tenRandom().reduce((acc, random) => acc += random, 0)
+    // console.log(newNumber)
 
-const theSumPromise = (array) => {
-    return new Promise ((resolve, reject) => {
-    const yetAnotherArraySum = (array) => array.reduce((acc, element) => acc += element, 0)
-    resolve(yetAnotherArraySum(array))
-  })
+    if (newNumber < 8000) {return newNumber} else {throw 'É mais de 8000! Essa promise deve ser quebrada.'}
+
 }
 
-promise
-  .then (number => {
-    console.log ([number / 2, number / 3 , number / 5, number / 10])
-    return theSumPromise([number / 2, number / 3 , number / 5, number / 10])
-  })
-  .then (result => console.log(result))
-  .catch (message => console.log(message))
+async function theSumPromise(number) {
+    const theNewArray = [number / 2, number / 3 , number / 5, number / 10]
+    const yetAnotherArraySum = theNewArray.reduce((acc, element) => acc += element, 0)
+
+    if (yetAnotherArraySum === undefined) {throw 'Array mal resolvido'} else {return yetAnotherArraySum}
+    // console.log(theNewArray)
+    // console.log(yetAnotherArraySum)
+  }
+
+async function numbersResults() {
+  try {
+    const number = await promise
+    const result = await theSumPromise(number)
+    console.log(result)
+  }
+  catch(e) {
+    console.log(e.message)
+  }
+}
+
+(async () => {
+  await numbersResults();
+})()
