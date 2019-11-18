@@ -9,9 +9,14 @@ class Pokedex extends React.Component {
   return (
     <div className="container">
       <div className="row">
-        <div className="d-flex flex-row p-2 bd-highlight">
-          {pokemons.map(pokemon =><Pokemon key={pokemon.id} pokeName={pokemon.name}/>)}
-        </div>
+        <h1>Welcome to your Pokédex!</h1>
+      </div>
+      <div className="row">
+
+          {pokemons.map(pokemon =><div className="col-sx-12 col-md-6">
+            <Pokemon key={pokemon.id} pokeName={pokemon.name}/>
+            </div>)}
+
       </div>
     </div>
   )
