@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
+import Image from './Image'
 import './App.css';
+import Order from './Order';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    const headphone = {
+      id: 102,
+      user: "cena@gmail.com",
+      product: "Razer Headphone",
+      price: {
+        value: 99.99,
+        currency: "dollars"
+      }
+    };
+
+    const energyDrink = {
+      id: 77,
+      user: "cena@gmail.com",
+      product: "Monster 500mL",
+      price: {
+        value: 9.99,
+        currency: "dollars"
+      }
+    };
+
+    return (
+      <div className="App">
+        <Image source="https://pixabay.com/get/52e6d4424b5aa514f1dc8460825668204022dfe05452774f742f78d4/cat-4611189_640.jpg" alternativeText="Cute cat staring" />
+        <h1> Orders recently created </h1>
+        <section>
+          <Order order={headphone} />
+          <Order order={energyDrink} />
+        </section>
+      </div>
+    );
+  }
 }
 
 export default App;
