@@ -21,7 +21,7 @@ class App extends React.Component {
       product: "Monster 500mL",
       price: {
         value: 9.99,
-        currency: "dollars"
+        currency: "reais"
       }
     };
 
