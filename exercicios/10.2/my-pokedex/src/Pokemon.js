@@ -1,12 +1,14 @@
-import data from './data'
+import pokemons from './data.js'
 import React from 'react';
 import './Pokedex.css';
 
 class Pokemon extends React.Component {
   render() {
-    const specificPokemon = data.pokemons.find(pokemon => pokemon.name === this.pŕops.pokemonName);
-    const {id, name, type, averageWeight: {value, measurementUnit}, image, moreInfo } = specificPokemon;
-    const pokeItem = <div className="pokemon">
+    const that = this
+    const poke = pokemons.find(pokemon => pokemon.name === that.props.pokeName);
+    const {id, name, type, averageWeight: {value, measurementUnit}, image, moreInfo } = poke
+
+    return (<div className="pokemon">
         <img src={image} alt={name}/>
         <ul>
           <li>Name: {name}</li>
@@ -15,9 +17,7 @@ class Pokemon extends React.Component {
           <li><a href={moreInfo}>More Info</a></li>
         </ul>
       </div>
-
-    return({pokeItem})
-
+      )
     }
   }
 
