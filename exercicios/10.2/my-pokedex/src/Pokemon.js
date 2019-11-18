@@ -6,7 +6,7 @@ class Pokemon extends React.Component {
   render() {
     const that = this
     const poke = pokemons.find(pokemon => pokemon.name === that.props.pokeName);
-    const {id, name, type, averageWeight: {value, measurementUnit}, image, moreInfo } = poke
+    const {name, type, averageWeight: {value, measurementUnit}, image, moreInfo } = poke
 
     return (<div className="pokemon">
         <img src={image} alt={name}/>
