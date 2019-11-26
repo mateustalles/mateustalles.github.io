@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-const Picture = (props) => {
+class Picture extends Component {
+  render() {
   return (
     <div className='picture'>
-      <img src={props.src} className='picture'/>
-      {props.children}
+      <img src={this.props.src} alt="img" className='picture'/>
+      {this.props.children}
     </div>
   )
+  }
 }
 export default Picture;

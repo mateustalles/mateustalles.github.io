@@ -17,21 +17,19 @@ this.setCurrentPic = this.setCurrentPic.bind(this);
 setCurrentPic(id) {
     this.setState({currentPic: id});
   }
-render () {
+  render () {
     return (
       <div>
         <div className='squares'>
-          {this.state.pictures.map((picture) => {
-            return (
-              <Picture key={picture.id} src={picture.src}>
-                <Button
-                  pictureSrc={picture.src}
-                  setCurrentPic={this.setCurrentPic}
-                  id={picture.id}
-                />
-              </Picture>
-            )
-          })}
+            <Picture src={this.state.pictures[0].src}>
+              <p>Hey, I'm some text!</p>
+            </Picture>
+            <Picture src={this.state.pictures[1].src}>
+              <Button pictureSrc={this.state.pictures[1].src}></Button>
+            </Picture>
+            <Picture src={this.state.pictures[2].src}>
+              <Picture src={this.state.pictures[2].src} />
+            </Picture>
         </div>
         <div>
           <p>Current selected picture ID is {this.state.currentPic}</p>
