@@ -64,11 +64,11 @@ class Doguitcho extends React.Component {
 
   nameHandler = (event,key) => {
     const newDog = { [key]: event.target.value }
-      if (this.state.dogs.length === 0) {
-        this.setState((state) => ({ dogs: state.dogs.concat(newDog) }))
-      } else {
-        this.setState((state) => ({ dogs: state.dogs.concat(newDog) }))
-      }
+      // if (this.state.dogs.length === 0) {
+      //   this.setState((state) => ({ dogs: state.dogs.concat(newDog) }))
+      // } else {
+        this.setState((state) => ({ dogs: Object.assign(state.dogs, newDog) }))
+      // }
   }
 
   render() {
