@@ -32,6 +32,9 @@ class Content extends React.Component {
     }
   }
 
+  componentDidMount() {
+    alert("Acabei de ser montado no DOM!")
+  }
   render() {
     return (
       <div>
