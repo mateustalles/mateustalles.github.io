@@ -29,11 +29,17 @@ class Content extends React.Component {
     if (nextProp.myNumber%3 === 0) {
       alert ("Atualizado!")
       return true
+    } else {
+      return false
     }
   }
 
   componentDidMount() {
     alert("Acabei de ser montado no DOM!")
+  }
+
+  componentWillUnmount() {
+    localStorage.setItem('lastNumber', this.props.myNumber)
   }
   render() {
     return (
