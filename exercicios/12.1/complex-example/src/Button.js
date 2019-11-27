@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 class Button extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ componentDidMount() {
 render() {
     return (
       <div>
-        <button
+        <button height={this.props.height}
           onClick={() => this.props.setCurrentPic(this.props.id)}
         >
           {this.state.label}
@@ -29,3 +31,7 @@ render() {
   }
 }
 export default Button;
+
+Button.propTypes = {
+  height: PropTypes.number
+}

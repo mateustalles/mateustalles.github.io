@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Picture from './Picture';
 import Button from './Button';
+import PictureList from './PicturesList';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,18 +20,22 @@ setCurrentPic(id) {
     this.setState({currentPic: id});
   }
   render () {
+
     return (
       <div>
         <div className='squares'>
-            <Picture src={this.state.pictures[0].src}>
-              <p>Hey, I'm some text!</p>
-            </Picture>
-            <Picture src={this.state.pictures[1].src}>
-              <Button pictureSrc={this.state.pictures[1].src}></Button>
-            </Picture>
-            <Picture src={this.state.pictures[2].src}>
-              <Picture src={this.state.pictures[2].src} />
-            </Picture>
+          <PictureList>
+              <Picture src={this.state.pictures[0].src}>
+                <p>Hey, I'm some text!</p>
+              </Picture>
+              <Picture alt={1} src={this.state.pictures[1].src}>
+                <Button height={100} pictureSrc={this.state.pictures[1].src}></Button>
+              </Picture>
+              <Picture src={this.state.pictures[2].src}>
+                {/* <Picture src={this.state.pictures[2].src} /> */}
+                <p>oi</p>
+              </Picture>
+            </PictureList>
         </div>
         <div>
           <p>Current selected picture ID is {this.state.currentPic}</p>
