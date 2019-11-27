@@ -7,7 +7,7 @@
 }
 
 img {
-  width: 200px;
+  height: 180px;
 }
 
 .gallery {
@@ -15,6 +15,15 @@ img {
   max-width: 1000px;
   flex-wrap: wrap;
 }
+
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  align-items: space-between;
+  padding: 10px 0;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

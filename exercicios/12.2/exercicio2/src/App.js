@@ -55,11 +55,35 @@ async function dog() {
 
 
 class Doguitcho extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dogs: [],
+    }
+  }
+
+  nameHandler = (event,key) => {
+    const newDog = { [key]: event.target.value }
+      if (this.state.dogs.length === 0) {
+        this.setState((state) => ({ dogs: state.dogs.concat(newDog) }))
+      } else {
+        this.setState((state) => ({ dogs: state.dogs.concat(newDog) }))
+      }
+  }
+
   render() {
     const dogsArray = this.props.url
     return (
       <>
-      {dogsArray.map((dog) => <img key={dog} src={dog} alt="Doggy" /> )}
+      {dogsArray.map((dog) => (
+        <div className="gallery-card" key={dogsArray.indexOf(dog)}>
+          <img src={dog} alt="Doggy" />
+          <label htmlFor="doggy-name">
+            Doggy Name:
+          <input type="text" value={this.state.dogs[dogsArray.indexOf(dog)[1]]} onBlur={(event) => this.nameHandler(event,dogsArray.indexOf(dog))} />
+          </label>
+        </div>
+      ))}
       </>
       )
 
