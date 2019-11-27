@@ -6,27 +6,24 @@ class App extends React.Component {
     super(props);
     this.state = {
       dogBoolean: false,
-      dogUrl: '',
+      dogUrl: [],
     }
   }
 
   componentDidMount = () => {
-    async function dog() {
-      try {
-        const doguito = await fetch('https://dog.ceo/api/breeds/image/random')
-        const data = await doguito.json();
-        return data
-      }
-      catch (err) {
-        console.log(`Erro: ${err}`)
-      }
-    }
     dog()
-      .then(url => this.setState({ dogUrl: url.message }));
+    .then(url => this.setState((state) => ({ dogUrl: state.dogUrl.concat(url.message + ' ') })))
   }
 
   doguitosBoolean = () => {
     this.setState((state) => ( { dogBoolean: !state.dogBoolean }))
+  }
+
+  summonNewDoguito = () => {
+
+    dog()
+      .then(url => this.setState((state) => ({ dogUrl: state.dogUrl.concat(url.message + ' ') })))
+
   }
 
   render() {
@@ -35,17 +32,41 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Doguitchos!</h1>
           <button type="button" onClick={this.doguitosBoolean}>Conjure um Doguitcho!</button>
-          {this.state.dogBoolean ? <Doguitcho url={this.state.dogUrl}/> : <div />}
-          <button type="button" onClick={this.componentDidMount}>Refresh doguito!</button>
+          <div className="gallery">
+            {this.state.dogBoolean ? <Doguitcho url={this.state.dogUrl}/> : undefined}
+          </div>
+          <button type="button" onClick={this.summonNewDoguito}>Refresh doguito!</button>
         </header>
       </div>
     );
   }
 }
 
-function Doguitcho(props) {
-  const dogsArray = [].concat(props.url)
-  return dogsArray.map((dog) => <img key={dogsArray.length} src={dog} alt="Doggy" />)
+async function dog() {
+  try {
+    const doguito = await fetch('https://dog.ceo/api/breeds/image/random')
+    const data = await doguito.json();
+    return data
+  }
+  catch (err) {
+    console.log(`Erro: ${err}`)
+  }
+}
+
+
+class Doguitcho extends React.Component {
+  render() {
+    const dogsArray = this.props.url
+    return (
+      <>
+      {dogsArray.map((dog) => <img key={dog} src={dog} alt="Doggy" /> )}
+      </>
+      )
+
+  }
+
+  // return  console.log(dogsArray)
+
 }
 
 export default App;
