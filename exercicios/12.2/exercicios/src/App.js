@@ -26,7 +26,10 @@ class App extends React.Component {
 class Content extends React.Component {
 
   shouldComponentUpdate(nextProp) {
-    if (nextProp.myNumber%3 === 0) return true
+    if (nextProp.myNumber%3 === 0) {
+      alert ("Atualizado!")
+      return true
+    }
   }
 
   render() {
