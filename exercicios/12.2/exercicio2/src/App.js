@@ -7,12 +7,12 @@ class App extends React.Component {
     this.state = {
       dogBoolean: false,
       dogUrl: [],
+      dogName: [],
     }
   }
 
   componentDidMount = () => {
-    dog()
-    .then(url => this.setState((state) => ({ dogUrl: state.dogUrl.concat(url.message + ' ') })))
+    this.summonNewDoguito();
   }
 
   doguitosBoolean = () => {
@@ -20,10 +20,20 @@ class App extends React.Component {
   }
 
   summonNewDoguito = () => {
-
+    if (this.state.dogUrl.length > 9) {
+      this.state.dogUrl.shift();
+      this.state.dogName.shift();
+    }
     dog()
-      .then(url => this.setState((state) => ({ dogUrl: state.dogUrl.concat(url.message + ' ') })))
+    .then(url => {
+      const objUrl = { url: url.message }
+      this.setState((state) => ({ dogUrl: state.dogUrl.concat(objUrl) }))
+    })
+  }
 
+  updateParentDogState = (key, name) => {
+    const newDog = { [key]: name.target.value }
+    this.setState((state) => ({ dogName: Object.assign(state.dogName, newDog) }))
   }
 
   render() {
@@ -31,11 +41,11 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <h1>Doguitchos!</h1>
-          <button type="button" onClick={this.doguitosBoolean}>Conjure um Doguitcho!</button>
+          <button type="button" onClick={this.doguitosBoolean}>Summon Doguitcho!</button>
           <div className="gallery">
-            {this.state.dogBoolean ? <Doguitcho url={this.state.dogUrl}/> : undefined}
+            {this.state.dogBoolean ? <Doguitcho url={this.state.dogUrl} updateParentDogState={this.updateParentDogState} propsDogs={this.state.dogName}/> : undefined}
           </div>
-          <button type="button" onClick={this.summonNewDoguito}>Refresh doguito!</button>
+          <button type="button" onClick={this.summonNewDoguito}>Summon one more Doguitcho!</button>
         </header>
       </div>
     );
@@ -53,7 +63,6 @@ async function dog() {
   }
 }
 
-
 class Doguitcho extends React.Component {
   constructor(props) {
     super(props);
@@ -62,35 +71,26 @@ class Doguitcho extends React.Component {
     }
   }
 
-  nameHandler = (event,key) => {
-    const newDog = { [key]: event.target.value }
-      // if (this.state.dogs.length === 0) {
-      //   this.setState((state) => ({ dogs: state.dogs.concat(newDog) }))
-      // } else {
-        this.setState((state) => ({ dogs: Object.assign(state.dogs, newDog) }))
-      // }
-  }
-
   render() {
     const dogsArray = this.props.url
+
     return (
       <>
       {dogsArray.map((dog) => (
         <div className="gallery-card" key={dogsArray.indexOf(dog)}>
-          <img src={dog} alt="Doggy" />
+          <img src={dog.url} alt="Doggy" />
           <label htmlFor="doggy-name">
             Doggy Name:
-          <input type="text" value={this.state.dogs[dogsArray.indexOf(dog)[1]]} onBlur={(event) => this.nameHandler(event,dogsArray.indexOf(dog))} />
+          <input
+            type="text"
+            value={this.props.propsDogs[dogsArray.indexOf(dog)] || ''}
+            onChange={(event) => this.props.updateParentDogState(dogsArray.indexOf(dog), event)} />
           </label>
         </div>
       ))}
       </>
       )
-
   }
-
-  // return  console.log(dogsArray)
-
 }
 
 export default App;
