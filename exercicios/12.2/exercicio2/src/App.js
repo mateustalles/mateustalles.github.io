@@ -21,8 +21,9 @@ class App extends React.Component {
 
   summonNewDoguito = () => {
     if (this.state.dogUrl.length > 9) {
-      this.state.dogUrl.shift();
-      this.state.dogName.shift();
+      // this.state.dogUrl.slice();
+      this.setState((state) => ({ dogUrl: state.dogUrl.slice(1,10) }))
+      this.setState((state) => ({ dogName: state.dogName.slice(1,10) }))
     }
     dog()
     .then(url => {
