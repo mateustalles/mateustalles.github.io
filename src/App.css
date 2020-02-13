@@ -39,3 +39,7 @@ body {
 .card .card-content p {
   margin-bottom: 15px;
 }
+
+.card-title {
+  background: rgba(128, 128, 128, 0.7);
+}
