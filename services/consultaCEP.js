@@ -11,4 +11,17 @@ const consultaCEP = async (cep) => {
   return getAddress;
 };
 
-module.exports = consultaCEP;
+const consultaEstatistica = async (stats) => {
+  console.log(stats)
+  if(stats) {
+    const getStats = await models.CEPStats.getStats(stats);
+    return getStats;
+  }
+
+  return { message: 'Query inválida', status: 400 };
+}
+
+module.exports = {
+  consultaCEP,
+  consultaEstatistica,
+};

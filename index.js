@@ -14,7 +14,10 @@ app.set('view engine', 'ejs');
 
 app.set('views', './views');
 
+app.get('/stats', (req, res, next) => CEPController.getStats(req, res, next));
+
 app.get('/', (req, res, next) => CEPController.getAddress(req, res, next));
+
 
 const PORT = process.env.PORT;
 

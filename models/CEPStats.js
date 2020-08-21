@@ -27,6 +27,27 @@ const setStats = async (data) => {
   return connection().then((db) => db.collection('cepStats').insertOne({ UF, 'quantidade': 1, 'cidades': [{ cidade, 'quantidade': 1 }]}));
 }
 
+const getStats = async (stats) => {
+  const { UF, cidade } = stats;
+
+  const statesArray = async () => {
+    if(UF) return connection().then((db) => db.collection('cepStats').find({ UF }).toArray());
+    return connection().then((db) => db.collection('cepStats').aggregate([
+      { $unwind: '$cidades'},
+      { $match: { 'cidades.cidade': cidade}},
+    ]).toArray());
+  }
+
+  console.log(await statesArray());
+
+  return {
+    data: await statesArray(),
+    message: 'Query bem sucedida',
+    status: 200,
+  }
+}
+
 module.exports = {
   setStats,
+  getStats,
 }
