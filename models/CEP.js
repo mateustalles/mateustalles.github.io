@@ -1,20 +1,24 @@
 const connection = require("./connection");
-const { ObjectId } = require('mongodb');
+
 const axios = require('axios');
 
 const parseAddress = (address) => {
-    const { cep, uf, cidade, bairro, logradouro } = address[0];
 
-    return ({ message: `CEP: ${cep}
-    UF: ${uf}
-    Cidade: ${cidade}
-    Bairro: ${bairro}
-    Logradouro: ${logradouro}` })
+    const { cep, uf, cidade, bairro, logradouro } = address;
+
+    return {
+      message: "CEP encontrado",
+      status: 200,
+      CEP: cep,
+      UF: uf,
+      cidade: cidade,
+      bairro: bairro,
+      logradouro: logradouro,
+    }
   };
 
 
-const addNewAddress = async (zipCode) => {
-  console.log('passei aqui')
+const fetchAddressData = async (zipCode) => {
   if (zipCode === undefined) return null;
 
   const address = await axios({
@@ -24,24 +28,23 @@ const addNewAddress = async (zipCode) => {
   })
   .then(({ data }) => data);
 
-  if(address.length === 0) return { message: "Este CEP não foi encontrado."}
-
-  const { cep, uf, cidade, bairro, logradouro } = address;
-
-  await connection().then((db) =>
-    db
-      .collection('ceps').insertOne({ cep, uf, cidade, bairro, logradouro }))
-
-  return parseAddress([{ cep, uf, cidade, bairro, logradouro }]);
+  return address;
 }
 
 
 
 const getAddress = async (zipCode) =>
 {
-  if(!isValid(zipCode)) return { message: "Este CEP não é válido" }
+  if(!isValid(zipCode)) return { message: "Este CEP não é válido", status: 400 }
 
   const cep = isValid(zipCode);
+
+  const addressData = await fetchAddressData(cep);
+
+  if(addressData.length === 0) return { message: "Este CEP não foi encontrado.", status: 404}
+
+  const { uf, cidade, bairro, logradouro } = addressData;
+
 
   const addressArray = await connection()
     .then((db) =>
@@ -49,21 +52,23 @@ const getAddress = async (zipCode) =>
         .collection('ceps').find({ "cep": cep })
         .toArray());
 
-  console.log(addressArray)
+  if(addressArray.length > 0) return parseAddress(addressData)
 
-  if(addressArray.length > 0) return parseAddress(addressArray)
-  return addNewAddress(cep)
+  await connection().then((db) => db
+    .collection('ceps').insertOne({ cep, uf, cidade, bairro, logradouro }));
 
+  return parseAddress(addressData);
 };
 
+
+
 const isValid = (cep) => {
-  if (cep.match(/[0-9]{5}\-[0-9]{3}/g)) return cep.replace('-', '');
-  if (cep.match(/[0-9]{8}/g)) return cep;
+  if (cep.match(/^[0-9]{5}\-[0-9]{3}$/g)) return cep.replace('-', '');
+  if (cep.match(/^[0-9]{8}$/g)) return cep;
   return false;
 };
 
 
 module.exports = {
   getAddress,
-  addNewAddress
 };
