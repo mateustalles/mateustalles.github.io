@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 
 const CEPController = require('./controllers/CEPController');
@@ -14,8 +16,6 @@ app.set('views', './views');
 
 app.get('/', (req, res, next) => CEPController.getAddress(req, res, next));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
-app.listen(PORT, () => {
-  console.log(`Ouvindo a porta ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

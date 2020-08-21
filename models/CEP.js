@@ -1,19 +1,20 @@
 const connection = require("./connection");
+const { ObjectId } = require('mongodb');
 const axios = require('axios');
 
-const parseAddress = (
-  address) => {
-    // console.log(`endereço chegando em parseAddress: ${address}`)
-    const [[ cep, uf, cidade, bairro, logradouro ]] = address;
-    // console.log(`resultado da desconstrução de array: ${cep}${uf}${cidade}${bairro}${logradouro}`)
-    return { message: `CEP: ${cep}
+const parseAddress = (address) => {
+    const { cep, uf, cidade, bairro, logradouro } = address[0];
+
+    return ({ message: `CEP: ${cep}
     UF: ${uf}
     Cidade: ${cidade}
     Bairro: ${bairro}
-    Logradouro: ${logradouro}` }
+    Logradouro: ${logradouro}` })
   };
 
+
 const addNewAddress = async (zipCode) => {
+  console.log('passei aqui')
   if (zipCode === undefined) return null;
 
   const address = await axios({
@@ -22,41 +23,38 @@ const addNewAddress = async (zipCode) => {
     headers: { "Accept": "application/json" }
   })
   .then(({ data }) => data);
-  console.log(`ao criar novo endereço ${typeof address}`)
+
   if(address.length === 0) return { message: "Este CEP não foi encontrado."}
 
   const { cep, uf, cidade, bairro, logradouro } = address;
+
   await connection().then((db) =>
     db
-      .getTable('cep')
-      .insert(["cep", "uf", "cidade", "bairro", "logradouro"])
-      .values(cep, uf, cidade, bairro, logradouro)
-      .execute());
+      .collection('ceps').insertOne({ cep, uf, cidade, bairro, logradouro }))
 
-  return parseAddress([[cep, uf, cidade, bairro, logradouro]])
+  return parseAddress([{ cep, uf, cidade, bairro, logradouro }]);
 }
 
 
-const getAddress = async (cep) =>
+
+const getAddress = async (zipCode) =>
 {
-  if(!isValid(cep)) return { message: "Este CEP não é válido" }
-  return connection()
+  if(!isValid(zipCode)) return { message: "Este CEP não é válido" }
+
+  const cep = isValid(zipCode);
+
+  const addressArray = await connection()
     .then((db) =>
       db
-        .getTable("cep")
-        .select(["cep", "uf", "cidade", "bairro", "logradouro"])
-        .where('cep = :cep')
-        .bind('cep', cep)
-        .execute()
-    )
-    .then((results) => results.fetchAll())
-    .then((address) => {
-      console.log(`registro do banco: ${address}, tamanho ${address.length}`)
-      return address.length !== 0
-      ? parseAddress(address)
-      : addNewAddress(cep)
-    }
-)};
+        .collection('ceps').find({ "cep": cep })
+        .toArray());
+
+  console.log(addressArray)
+
+  if(addressArray.length > 0) return parseAddress(addressArray)
+  return addNewAddress(cep)
+
+};
 
 const isValid = (cep) => {
   if (cep.match(/[0-9]{5}\-[0-9]{3}/g)) return cep.replace('-', '');

@@ -1,20 +1,16 @@
-const mysqlx = require('@mysql/xdevapi');
+const mongoClient = require('mongodb').MongoClient;
 
 const connection = () => {
-  return mysqlx.getSession({
-    user: 'root',
-    password: '',
-    host: 'localhost',
-    port: 33060,
-    schema: 'cep_lookup',
-  })
-  .then((session) => {
-    return session.getSchema('cep_lookup');
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+  return mongoClient
+    .connect(process.env.DB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    .then((conn) => conn.db(process.env.DB_NAME))
+    .catch((err) => {
+      console.error(err);
+      process.exit(1);
+   });
 };
 
 module.exports = connection;
