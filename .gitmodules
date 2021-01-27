@@ -4,3 +4,6 @@
 [submodule "projetos/projetos/sd-01-week4-5-project-mystery-letter"]
 	path = projetos/projetos/sd-01-week4-5-project-mystery-letter
 	url = https://github.com/tryber/sd-01-week4-5-project-mystery-letter
+[submodule "exercicios/14.3/exercicios/14.3/jest-exercises"]
+	path = exercicios/14.3/exercicios/14.3/jest-exercises
+	url = https://github.com/iamgique/jest-exercises.git
