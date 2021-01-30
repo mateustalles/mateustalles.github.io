@@ -26,44 +26,49 @@
 # - 6 => 1 (score dele próprio)
 # - 7 => 1 (score dele próprio)
 
+class SubordinatesRank:
+    def __init__(self):
+        self._subordinates = {
+            1: [[2, 3], []],
+            2: [[4], []],
+            3: [[], []],
+            4: [[5, 6], []],
+            5: [[7], []],
+            6: [[], []],
+            7: [[], []]
+        }
 
-def calc_score(employee_id, subordinates_rank, score=1):
-    # - 1 => 2, 3
-    # - 2 => 4
-    # - 3 => sem subordinados
-    # - 4 => 5, 6
-    # - 5 => 7
-    # - 6 => sem subordinados
-    # - 7 => sem subordinados
-    if score == 1 and subordinates_rank[employee_id] == None:
-        return 0
+    def calc_score(self, id, score=1, iterated_ids=[]):
+        iterated_ids.append(id)
+        # - 1 => 2, 3
+        # - 2 => 4
+        # - 3 => sem subordinados
+        # - 4 => 5, 6
+        # - 5 => 7
+        # - 6 => sem subordinados
+        # - 7 => sem subordinados
 
-    if employee_id > len(subordinates_rank):
-        return score
+        if id > len(self._subordinates):
+            self._subordinates[iterated_ids[0]][1] = score
+            return score
 
-    if subordinates_rank[employee_id] != None:
-        score += len(subordinates_rank[employee_id])
-    employee_id += 1
+        if self._subordinates[id][1]:
+            score = self._subordinates[id][1]
+            return score
 
-    return calc_score(employee_id, subordinates_rank, score)
+        if score == 1 and not self._subordinates[id][0]:
+            self._subordinates[id][1] = 0
+            return 0
 
+        if self._subordinates[id][0] != None:
+            score += len(self._subordinates[id][0])
+            id += 1
+            return self.calc_score(id, score, iterated_ids)
 
 if __name__ == "__main__":
-    subordinates = {
-        1: [2, 3],
-        2: [4],
-        3: None,
-        4: [5, 6],
-        5: [7],
-        6: None,
-        7: None
-    }
-    print(calc_score(1, subordinates))
-    print(calc_score(2, subordinates))
-    print(calc_score(3, subordinates))
-    print(calc_score(4, subordinates))
-    print(calc_score(5, subordinates))
-    print(calc_score(6, subordinates))
-    print(calc_score(7, subordinates))
+    rank = SubordinatesRank()
+
+    rank.calc_score(5)
 
 
+    print(rank._subordinates)
