@@ -22,7 +22,6 @@ if __name__ == "__main__":
     estudantes = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
     lista1_entregues = ['a', 'd', 'g', 'c']
     lista2_entregues = ['c', 'a', 'f']
-
     conjunto_estudantes = set(estudantes)
     conjunto_lista_1 = set(lista1_entregues)
     conjunto_lista_2 = set(lista2_entregues)
@@ -30,14 +29,12 @@ if __name__ == "__main__":
 
 
     # Quem ainda não entregou a lista1?
-
     nao_entregou_lista_1 = conjunto_estudantes.difference(conjunto_lista_1)
     print(f"""# Quem ainda não entregou a lista1?
     Estudantes: {nao_entregou_lista_1}""")
 
 
     # Quem já entregou as duas listas?
-
     entregou_2_listas = conjunto_estudantes.intersection(
         conjunto_estudantes.intersection(conjunto_lista_1),
         conjunto_estudantes.intersection(conjunto_lista_2)
@@ -47,15 +44,12 @@ if __name__ == "__main__":
 
 
     # Quem já entregou qualquer uma das duas listas?
-
     entregou_alguma_lista = conjunto_estudantes.intersection(listas_entregues)
-
     print(f"""# Quem já entregou qualquer uma das duas listas?
     Estudantes: {entregou_alguma_lista}""")
 
 
     # Quem ainda não entregou nenhuma das listas?
-
     nao_entregou_listas = conjunto_estudantes.intersection(
         conjunto_estudantes.difference(conjunto_lista_1),
         conjunto_estudantes.difference(conjunto_lista_2)
