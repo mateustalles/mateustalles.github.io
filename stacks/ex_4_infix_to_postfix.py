@@ -1,10 +1,19 @@
 
 
 def infix_to_postfix(expr, last_item=None, new_expr=None):
+    def add_before(value, *args):
+        for arg in args:
+            if " " not in value or " " not in arg:
+                value = arg + " " + value
+            else:
+                value = arg + value
+        return value
+
     if not expr:
         return new_expr
+
     elif len(expr) == 1:
-        new_expr.insert(0, expr)
+        new_expr = add_before(new_expr, expr[0])
         return new_expr
 
     if isinstance(expr, str):
@@ -13,15 +22,11 @@ def infix_to_postfix(expr, last_item=None, new_expr=None):
     operators = set(["*", "/", "+", "-"])
 
     if new_expr == None:
-        new_expr = list()
+        new_expr = str()
 
     last_item = expr[-1]
 
-    new_expr_batch = list()
-
-    def add_before(val1, val2):
-        val1 = val2 + " " + val1
-
+    new_expr_batch = str()
 
     if last_item == ")":
         closing_parenthesis = expr.pop()
@@ -29,24 +34,25 @@ def infix_to_postfix(expr, last_item=None, new_expr=None):
             factor = expr.pop()
             if expr[-1] in operators:
                 operator = expr.pop()
-                
-                new_expr_batch.insert(0,[factor, operator])
+                new_expr_batch = add_before(new_expr_batch, operator[0], factor[0])
+                # new_expr_batch = add_before(new_expr_batch, factor[0])
             else:
-                new_expr_batch.insert(0, factor)
+                new_expr_batch = add_before(new_expr_batch, factor[0])
         opening_parenthesis = expr.pop()
         if not expr:
-            new_expr_batch.insert(0, opening_parenthesis)
-            new_expr_batch.extend(closing_parenthesis)
+            new_expr_batch = add_before(new_expr_batch, opening_parenthesis[0])
+            new_expr_batch += closing_parenthesis[0]
         else:
             opening_operator = expr.pop()
-            new_expr_batch.insert(0, opening_parenthesis)
-            new_expr_batch.extend([closing_parenthesis, opening_operator])
+            new_expr_batch = add_before(new_expr_batch, opening_parenthesis[0])
+            new_expr_batch += closing_parenthesis[0] + " " + opening_operator[0] + " "
     else:
         factor = expr.pop()
         operator = expr.pop()
-        new_expr_batch.insert(0, [factor, operator])
+        new_expr_batch = add_before(new_expr_batch, operator[0])
+        new_expr_batch = add_before(new_expr_batch, factor[0])
 
-    new_expr.insert(0, new_expr_batch)
+    new_expr = add_before(new_expr, new_expr_batch)
     
     return infix_to_postfix(expr, last_item, new_expr)
     
